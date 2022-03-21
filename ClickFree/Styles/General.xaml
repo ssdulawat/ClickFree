@@ -1,0 +1,206 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:controls="clr-namespace:ClickFree.Controls" 
+                    xmlns:converters="clr-namespace:ClickFree.Converters" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" 
+                    xmlns:vm="clr-namespace:ClickFree.ViewModel"
+                    xmlns:local="clr-namespace:ClickFree.Styles">
+
+    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>
+    <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
+    <converters:ValueComparerConverter x:Key="ValueComparerConverter" />
+    <converters:VisibilityValueComparerConverter x:Key="VisibilityValueComparerConverter" />
+    
+    <FontFamily x:Key="Montserrat">pack://application:,,,/Resources/Fonts/Montserrat/#Montserrat</FontFamily>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat}"/>
+    </Style>
+
+    <!--windows style-->
+    <Style x:Key="WindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="32">
+                </WindowChrome>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <controls:WindowsTitle Title="{TemplateBinding Title}" CanMaximize="False">
+                            <ContentPresenter />
+                        </controls:WindowsTitle>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--transfer-->
+    <Style x:Key="TransferWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource TransferWindowBackground}" BorderBrush="{StaticResource TransferWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--facebook-->
+    <Style x:Key="FacebookLoginWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource FacebookLoginWindowBackground}" BorderBrush="{StaticResource FacebookLoginWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--backup-->
+    <Style x:Key="BackupWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource TransferWindowBackground}" BorderBrush="{StaticResource TransferWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--transfer progress-->
+    <Style x:Key="TransferProgressBarStyle" TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="{StaticResource ProgressBar.Progress}"/>
+        <Setter Property="Background" Value="{StaticResource ProgressBar.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ProgressBar.Border}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid x:Name="TemplateRoot">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate"/>
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Animation">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.25"/>
+                                            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.25"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="Animation">
+                                            <EasingPointKeyFrame KeyTime="0" Value="-0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:1" Value="0.5,0.5"/>
+                                            <EasingPointKeyFrame KeyTime="0:0:2" Value="1.5,0.5"/>
+                                        </PointAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"/>
+                        <Rectangle x:Name="PART_Track">
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="Green" Direction="270" ShadowDepth="4" Opacity="0.25" />
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left">
+                            <Rectangle x:Name="Indicator" Fill="{TemplateBinding Foreground}" />
+                            <Rectangle x:Name="Animation" Fill="{TemplateBinding Foreground}" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="TemplateRoot">
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsIndeterminate" Value="true">
+                            <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--MESSAGE BOX-->
+    <Style x:Key="MessageBoxWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource MessageBoxWindowBackground}" BorderBrush="{StaticResource MessageBoxWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--apple format detected-->
+    <Style x:Key="AppleFormatDetectedWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="444" />
+        <Setter Property="Height" Value="340" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource AppleFormatDetectedWindowBackground}" BorderBrush="{StaticResource AppleFormatDetectedWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,38 @@
+﻿<local:BaseWindow x:Class="ClickFree.Windows.MessageBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:ClickFree.Windows"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" WindowStartupLocation="CenterOwner" 
+        mc:Ignorable="d" Style="{StaticResource MessageBoxWindowStyle}"
+        MinHeight="236" MinWidth="449" Height="236" Width="449">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Titile-->
+        <TextBlock x:Name="txtTitle" Text="Transfer your photos and videos to PC" TextWrapping="Wrap" Grid.ColumnSpan="5" FontSize="20"
+                   Foreground="White" LineHeight="24" FontWeight="Medium" Margin="30,30,30,0"/>
+        <!--image-->
+        <Image x:Name="imgInfo" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Source="pack://application:,,,/ClickFree;component/Resources/Error.png"
+               HorizontalAlignment="Left" Stretch="Fill" Margin="31,30,0,0" Width="50" Height="50"/>
+        <!--message-->
+        <TextBlock x:Name="tbMessage" Grid.Row="1" Grid.Column="1" Margin="15,34,35,0" 
+                   FontSize="14" Foreground="#B2B2B2" LineHeight="20" TextWrapping="Wrap"
+                   Text="Could not transfer files. You dont have enought permissions for destination folder. Please restart the app as administrator and try again."
+                   VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="btnViewFolder" Content="View folder" Style="{StaticResource MessageBoxRoundButtonStyle}" Width="108" Height="38" Click="BtnViewFolder_Click"/>
+            <Button x:Name="btnCancel" Content="Close" Style="{StaticResource MessageBoxCloseButtonStyle}" Width="50" Click="BtnCancel_Click" />
+        </StackPanel>
+    </Grid>
+</local:BaseWindow>

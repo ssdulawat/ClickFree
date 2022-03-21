@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E76689CF-8CBF-41FD-926A-599710B5E280}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClickFree</RootNamespace>
+    <AssemblyName>ClickFree</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=7.23.2.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.7.23.2.1\lib\net40\Magick.NET-Q16-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET.Core">
+      <HintPath>..\packages\Magick.NET.Core.6.1.2\lib\net40\Magick.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ZetaLongPaths, Version=1.0.0.38, Culture=neutral, PublicKeyToken=b764f59068f31f38, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZetaLongPaths.1.0.0.38\lib\net452-full\ZetaLongPaths.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClickFreeInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controls\FileSelectionCtrl.xaml.cs">
+      <DependentUpon>FileSelectionCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ValueComparerConverter.cs" />
+    <Compile Include="Exceptions\UsbDriveNotFoundException.cs" />
+    <Compile Include="Facebook\FacebookManager.cs" />
+    <Compile Include="Helpers\DriveManager.cs" />
+    <Compile Include="Helpers\FileManager.cs" />
+    <Compile Include="Helpers\SerializationManager.cs" />
+    <Compile Include="Helpers\TransferManager.cs" />
+    <Compile Include="Helpers\WinAPI.cs" />
+    <Compile Include="INavigation.cs" />
+    <Compile Include="ViewModel\BackupDialogVM.cs" />
+    <Compile Include="ViewModel\BackupFacebookDestVM.cs" />
+    <Compile Include="ViewModel\BackupFacebookMainVM.cs" />
+    <Compile Include="ViewModel\BackupFromFacebookDialogVM.cs" />
+    <Compile Include="ViewModel\BackupToUSBMainVM.cs" />
+    <Compile Include="ViewModel\BackupToUSBSelectVM.cs" />
+    <Compile Include="ViewModel\FacebookLoginDialogVM.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\OnboardingVM.cs" />
+    <Compile Include="ViewModel\RootViewModel.cs" />
+    <Compile Include="ViewModel\TransferDialogVM.cs" />
+    <Compile Include="ViewModel\TransferVM.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\VMBase.cs" />
+    <Compile Include="Views\BackupFacebookDestView.xaml.cs">
+      <DependentUpon>BackupFacebookDestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackupFacebookMainView.xaml.cs">
+      <DependentUpon>BackupFacebookMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BackupFacebookSelectImagesVM.cs" />
+    <Compile Include="Views\BackupFacebookSelectImagesView.xaml.cs">
+      <DependentUpon>BackupFacebookSelectImagesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackupToUSBMainView.xaml.cs">
+      <DependentUpon>BackupToUSBMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackupToUSBSelectView.xaml.cs">
+      <DependentUpon>BackupToUSBSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OnboardingView.xaml.cs">
+      <DependentUpon>OnboardingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferView.xaml.cs">
+      <DependentUpon>TransferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AppleFormatDetectedWindow.xaml.cs">
+      <DependentUpon>AppleFormatDetectedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BackupFromFacebookWindow.xaml.cs">
+      <DependentUpon>BackupFromFacebookWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BackupToClickFreeWindow.xaml.cs">
+      <DependentUpon>BackupToClickFreeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BaseWindow.cs" />
+    <Compile Include="Windows\FacebookLoginWindow.xaml.cs">
+      <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MessageBoxWindow.xaml.cs">
+      <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TransferToPCWindow.xaml.cs">
+      <DependentUpon>TransferToPCWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\FileSelectionCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WindowsTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\WindowsTitle.xaml.cs">
+      <DependentUpon>WindowsTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ObjectToBoolConverter.cs" />
+    <Compile Include="Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackupFacebookDestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackupFacebookMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackupFacebookSelectImagesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackupToUSBMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BackupToUSBSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OnboardingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransferView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AppleFormatDetectedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BackupFromFacebookWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BackupToClickFreeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FacebookLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MessageBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TransferToPCWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Black.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Light.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Resource Include="Resources\Fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon.ico" />
+    <Resource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Back.png" />
+    <Resource Include="Resources\ChatSupport.png" />
+    <Resource Include="Resources\Error.png" />
+    <Resource Include="Resources\Info.png" />
+    <Resource Include="Resources\Success.png" />
+    <Resource Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder.png" />
+    <Resource Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chevron_right_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\facebook 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\isChecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\infotooltipbk.png" />
+    <Resource Include="Resources\infotooltiptext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Navigation\selected tab.png" />
+    <Resource Include="Resources\Navigation\unselected tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Navigation\next_board.png" />
+    <Resource Include="Resources\Navigation\prev_board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Navigation\e_email_letter_mail_icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

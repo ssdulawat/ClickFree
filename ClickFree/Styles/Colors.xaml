@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ClickFree.Styles">
+
+    <!--GENERAl-->
+    <!--transfer window-->
+    <SolidColorBrush x:Key="TransferWindowBorder" Color="#000000" Opacity="0.2" />
+    <SolidColorBrush x:Key="TransferWindowBackground" Color="#32373D"/>
+
+    <!--transfer window-->
+    <SolidColorBrush x:Key="FacebookLoginWindowBorder" Color="#000000" Opacity="0.2" />
+    <SolidColorBrush x:Key="FacebookLoginWindowBackground" Color="#32373D"/>
+    
+    <!--progress-->
+    <LinearGradientBrush x:Key="ProgressBar.Progress">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ProgressBar.Background" Color="#000000" Opacity="0.2"/>
+    <SolidColorBrush x:Key="ProgressBar.Border" Color="Transparent"/>
+    <!--MessageBox-->
+    <SolidColorBrush x:Key="MessageBoxWindowBorder" Color="#000000" Opacity="0.2" />
+    <SolidColorBrush x:Key="MessageBoxWindowBackground" Color="#32373D"/>
+    <!--apple format detected-->
+    <SolidColorBrush x:Key="AppleFormatDetectedWindowBorder" Color="#000000" Opacity="0.2" />
+    <SolidColorBrush x:Key="AppleFormatDetectedWindowBackground" Color="#32373D"/>
+    <!--select all button-->
+    <SolidColorBrush x:Key="SelectAllButtonMouseHoverForeground" Color="#257AC9" />
+    <LinearGradientBrush x:Key="BackupRoundButton.Disabled.Background">
+        <GradientStop Color="#DEDEDE" Offset="0" />
+        <GradientStop Color="#858585" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackupRoundButton.MouseOver.Background" Opacity="0.9">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackupRoundButton.Pressed.Background" Opacity="0.8">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+
+    <!--Buttons-->
+    <LinearGradientBrush x:Key="MainPageRoundButtonBackground">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="#0467C0" />
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+
+    <SolidColorBrush x:Key="TransferCancelButtonTextForeground" Color="#54BAF4" />
+    <SolidColorBrush x:Key="MessageBoxCloseTextForeground" Color="#54BAF4" />
+
+    <LinearGradientBrush x:Key="AppleFormatDetectedYesRoundButtonBackground">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="AppleFormatDetectedCancelButtonTextForeground" Color="#54BAF4" />
+
+    
+    <!--facebook login-->
+    <LinearGradientBrush x:Key="FacebookLoginRoundButtonBackground">
+        <GradientStop Color="#56BCF5" Offset="0" />
+        <GradientStop Color="#0265BF" Offset="1" />
+    </LinearGradientBrush>
+    
+</ResourceDictionary>

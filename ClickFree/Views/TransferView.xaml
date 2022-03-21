@@ -1,0 +1,183 @@
+﻿<UserControl x:Class="ClickFree.Views.TransferView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClickFree.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="441" d:DesignWidth="800"
+             x:Name="transformView">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TransferPathTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#1C1E20"/>
+            <Setter Property="BorderBrush" Value="#33383E"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14px"/>
+            <Setter Property="FontFamily" Value="Montserrat" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="12,0,0,0" Focusable="false" VerticalAlignment="Center" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <!--<Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Transfer button-->
+        <Style x:Key="SelectTransferPathButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="#3B4148"/>
+            <Setter Property="BorderBrush" Value="#33383E"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <StackPanel x:Name="contentPresenter" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Path Data="M1.60001 3.59999C2.48367 3.59999 3.20002 2.88364 3.20002 1.99998C3.20002 1.11632 2.48367 0.399971 1.60001 0.399971C0.716349 0.399971 0 1.11632 0 1.99998C0 2.88364 0.716349 3.59999 1.60001 3.59999Z"
+                                      Fill="#54BAF4"  />
+                                <Path Data="M1.60001 3.59999C2.48367 3.59999 3.20002 2.88364 3.20002 1.99998C3.20002 1.11632 2.48367 0.399971 1.60001 0.399971C0.716349 0.399971 0 1.11632 0 1.99998C0 2.88364 0.716349 3.59999 1.60001 3.59999Z"
+                                      Fill="#54BAF4" Margin="3,0,0,0"/>
+                                <Path Data="M1.60001 3.59999C2.48367 3.59999 3.20002 2.88364 3.20002 1.99998C3.20002 1.11632 2.48367 0.399971 1.60001 0.399971C0.716349 0.399971 0 1.11632 0 1.99998C0 2.88364 0.716349 3.59999 1.60001 3.59999Z"
+                                      Fill="#54BAF4" Margin="3,0,0,0" />
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Height="40" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Style="{StaticResource FlatButtonStyle}" Command="{Binding Path=Navigation.BackCommand}">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Margin="14,14,0,0" Height="12" Width="10.29" VerticalAlignment="Top"  Source="/ClickFree;component/Resources/Back.png" />
+                    <TextBlock Margin="15,10,0,0" Text="Main" VerticalAlignment="Top" FontWeight="SemiBold" Foreground="White" FontSize="14" FontFamily="Montserrat" />
+                </StackPanel>
+            </Button>
+
+            <!--<Button Grid.Column="2" Height="40"
+                    VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                    Style="{StaticResource FlatButtonStyle}" Command="{Binding Path=Navigation.ContactUSCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="30"  Source="/ClickFree;component/Resources/Navigation/e_email_letter_mail_icon.png" Margin="0,5,5,0" VerticalAlignment="Top"/>
+                    <TextBlock Text="Email Support" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" Foreground="White" FontSize="14" 
+                               Margin="0,0,10,0"/>
+                </StackPanel>
+            </Button>
+            
+            <Button Grid.Column="3" Height="40"
+                    VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                    Style="{StaticResource FlatButtonStyle}" Command="{Binding Path=Navigation.ChatSupportCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                <Image Height="20" Width="128" Source="/ClickFree;component/Resources/ChatSupport.png"  Margin="0,10,20,0" VerticalAlignment="Top"/>
+            </Button>-->
+        </Grid>
+
+        <Grid Margin="0,89,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Transfer your photos and videos to PC" TextAlignment="Center" FontSize="24px" Height="31px" Foreground="White" FontWeight="SemiBold" LineHeight="20px" HorizontalAlignment="Left"
+                       Margin="0,0,0,0" Grid.Row="0" Grid.Column="1"/>
+
+            <TextBlock Text="Choose the folder where you'd like to save your photos and videos on your computer" 
+                       Margin="0,11,0,0" Width="466" Height="40px" LineHeight="20px"
+                       TextAlignment="Left" TextWrapping="Wrap" FontSize="12px" Foreground="#B2B2B2" 
+                       HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1"/>
+
+            <Grid HorizontalAlignment="Left" Margin="0,9,0,0" Width="472" Grid.Row="2"  Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Style="{StaticResource TransferPathTextBoxStyle}" FontFamily="{StaticResource Montserrat}" Text="{Binding CurrentDir}" IsReadOnly="True"/>
+                <Button Width="32" Height="32" Margin="15,0,0,0"  Grid.Column="1" Style="{StaticResource SelectTransferPathButtonStyle}" Command="{Binding SelectFolderCommand}" />
+            </Grid>
+
+            <Button HorizontalAlignment="Center" Width="152" Height="38" Margin="0,18,0,0" Style="{StaticResource TransferToPCRoundButtonStyle}" Grid.Row="3" Grid.Column="1"
+                    Command="{Binding TransferCommand}">Transfer</Button>
+        </Grid>
+        
+    </Grid>
+</UserControl>
