@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\App.xaml
 20-1916756634
 
-55-1166271096
-82692063203
+51-773964806
+82-1286557831
 Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
 
-True
+False
 

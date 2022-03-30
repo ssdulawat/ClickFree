@@ -76,7 +76,8 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
-                            Process.Start("https://www.datalogixxmemory.com/faq");
+                            //Process.Start("https://www.datalogixxmemory.com/faq");
+                            Process.Start("https://clickfreebackup.com/pages/technical-support");
                         }
                         catch { }
                     });

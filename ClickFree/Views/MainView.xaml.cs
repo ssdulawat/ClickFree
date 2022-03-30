@@ -23,6 +23,8 @@ namespace ClickFree.Views
         public MainView()
         {
             InitializeComponent();
+            BrushConverter bc = new BrushConverter();
+            firstBorder.Background = (Brush)bc.ConvertFrom("#54BAF4");
         }
 
         public void MainBtn(object sender, System.EventArgs e)
@@ -35,6 +37,17 @@ namespace ClickFree.Views
         {
             MainPanel.Visibility = Visibility.Hidden;
             SettingsPanel.Visibility = Visibility.Visible;
+            firstBorder.Background = Brushes.Transparent;
+        }
+
+        public void EmailBtn(object sender, System.EventArgs e)
+        {
+            firstBorder.Background = Brushes.Transparent;
+        }
+
+        public void ChatBtn(object sender, System.EventArgs e)
+        {
+            firstBorder.Background = Brushes.Transparent;
         }
 
     }

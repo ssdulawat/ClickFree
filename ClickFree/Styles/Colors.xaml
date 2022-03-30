@@ -74,5 +74,17 @@
         <GradientStop Color="#56BCF5" Offset="0" />
         <GradientStop Color="#0265BF" Offset="1" />
     </LinearGradientBrush>
-    
+
+    <!--Menu buttons-->
+    <SolidColorBrush x:Key="ButtonMain.MouseOver.Background" Color="#54BAF4" Opacity="0.2"/>
+    <SolidColorBrush x:Key="ButtonMain.MouseOver.Border" Color="#54BAF4" Opacity="0.2"/>
+    <SolidColorBrush x:Key="ButtonMain.MouseOver.Foreground" Color="#56BCF5" />
+    <SolidColorBrush x:Key="ButtonMain.Pressed.Background" Color="#54BAF4" Opacity="0.1"/>
+    <SolidColorBrush x:Key="ButtonMain.Pressed.Border" Color="#54BAF4" Opacity="0.1"/>
+    <SolidColorBrush x:Key="ButtonMain.IsFocused.Background" Color="#54BAF4" Opacity="0.4"/>
+    <SolidColorBrush x:Key="ButtonMain.IsFocused.Border" Color="#54BAF4" Opacity="0.4"/>
+    <SolidColorBrush x:Key="ButtonMain.Disabled.Background" Color="#54BAF4" Opacity="0.1"/>
+    <SolidColorBrush x:Key="ButtonMain.Disabled.Border" Color="#54BAF4" Opacity="0.1"/>
+    <SolidColorBrush x:Key="ButtonMain.Disabled.Foreground" Color="#56BCF5" />
+
 </ResourceDictionary>

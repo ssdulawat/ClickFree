@@ -380,5 +380,8 @@
   <ItemGroup>
     <Resource Include="Resources\Navigation\e_email_letter_mail_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\usb-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
