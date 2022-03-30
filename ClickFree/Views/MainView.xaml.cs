@@ -24,5 +24,18 @@ namespace ClickFree.Views
         {
             InitializeComponent();
         }
+
+        public void MainBtn(object sender, System.EventArgs e)
+        {
+            MainPanel.Visibility = Visibility.Visible;
+            SettingsPanel.Visibility = Visibility.Hidden;
+        }
+
+        public void SettingsBtn(object sender, System.EventArgs e)
+        {
+            MainPanel.Visibility = Visibility.Hidden;
+            SettingsPanel.Visibility = Visibility.Visible;
+        }
+
     }
 }
