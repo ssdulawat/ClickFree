@@ -250,6 +250,7 @@ namespace ClickFree.Helpers
                 mSelectedDrive = InsertedDrives?.FirstOrDefault();
 
             bool result = SelectedUSBDrive != null;
+            //bool result = true;
             if (!result && showWarningMessage)
                 MessageBoxWindow.ShowMessageBox("Could not establish connection with ClickFree.", "Please connect/ re - connect ClickFree to your computer USB port.", MessageBoxWindow.MessageBoxType.Error);
 

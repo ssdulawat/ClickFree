@@ -58,7 +58,7 @@
                 <Image Height="20" Width="128" Source="/ClickFree;component/Resources/ChatSupport.png"  Margin="20,10,15,0" VerticalAlignment="Top"/>
             </Button>
 
-            <Button Grid.Column="6" Style="{StaticResource USBButtonStyle}" Margin="10,0,15,0">
+            <Button Grid.Column="6" Style="{StaticResource USBButtonStyle}" Margin="10,0,15,0" Background="Green">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel Orientation="Vertical">
@@ -68,8 +68,8 @@
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
-                <StackPanel Orientation="Horizontal">
-                    <Image Height="20"  Source="/ClickFree;component/Resources/usb-icon.png" />
+                <StackPanel Orientation="Horizontal" >
+                    <Image Height="19"  Source="/ClickFree;component/Resources/usb-png.png"/>
                 </StackPanel>
             </Button>
         </Grid>
@@ -85,7 +85,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,25">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,70,0,15">
                 <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
             </TextBlock>
             <StackPanel Orientation="Horizontal">
@@ -94,18 +94,20 @@
                             Command="{Binding Path=Navigation.FAQCommand}"/>
                     <Button Content="Get Help" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.GetHelpCommand}"/>
-                    <Button Content="EULA" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
-                            Command="{Binding Path=Navigation.EULACommand}"/>
                     <Button Content="Erase Device" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.EraseCommand}" />
-                    <Button Content="Contact Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Language" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Contact Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
+                            Command="{Binding Path=Navigation.ContactUSCommand}"/>
+                    <Button Content="About Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                     <Button Content="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="Format" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
+                    <Button Content="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="How to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="How to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
+                    <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
+                    <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

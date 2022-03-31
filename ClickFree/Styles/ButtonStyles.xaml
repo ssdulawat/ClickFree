@@ -755,7 +755,7 @@
     <!--settings window-->
     <Style x:Key="SettingsViewRoundButtonStyle" TargetType="Button">
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Margin" Value="0,7,0,7" />
+        <Setter Property="Margin" Value="0,5,0,5" />
         <Setter Property="Width" Value="280" />
         <Setter Property="Height" Value="35" />
         <Setter Property="Foreground" Value="White" />
@@ -845,8 +845,8 @@
 
     <!--USB Button-->
     <Style x:Key="USBButtonStyle" TargetType="Button">
-        <Setter Property="Width" Value="22" />
-        <Setter Property="Height" Value="22" />
+        <Setter Property="Width" Value="25" />
+        <Setter Property="Height" Value="25" />
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="14" />
@@ -862,7 +862,7 @@
                                 <!--When Not Connected-->
                                 <!--<SolidColorBrush Color="Red" />-->
                                 <!--When Connected-->
-                                <SolidColorBrush Color="Green" />
+                                <SolidColorBrush Color="Green"/>
                             </Ellipse.Fill>
                         </Ellipse>
                         <ContentPresenter HorizontalAlignment="Center"  

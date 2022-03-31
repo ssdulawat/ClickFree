@@ -97,7 +97,8 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
-                            Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
+                            //Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
+                            Process.Start("https://clickfreebackup.com/pages/contact-us");
                         }
                         catch { }
                     });
