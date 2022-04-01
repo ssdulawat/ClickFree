@@ -26,6 +26,9 @@ namespace ClickFree.Views
             InitializeComponent();
             BrushConverter bc = new BrushConverter();
             firstBorder.Background = (Brush)bc.ConvertFrom("#54BAF4");
+            usbButton.Background = Brushes.Green;  //when connected  "Brushes.Red;" when disconnected
+            connection.Content = "Connected";
+            space.Content = "143 GB Available";
         }
 
         public void MainBtn(object sender, System.EventArgs e)

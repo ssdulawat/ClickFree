@@ -851,23 +851,17 @@
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
-        <Setter Property="Background" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Ellipse Stroke="Black"  
-                       StrokeThickness="0">
-                            <Ellipse.Fill>
-                                <!--When Not Connected-->
-                                <!--<SolidColorBrush Color="Red" />-->
-                                <!--When Connected-->
-                                <SolidColorBrush Color="Green"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <ContentPresenter HorizontalAlignment="Center"  
-                                VerticalAlignment="Center"/>
-                    </Grid>
+                <ControlTemplate>
+                    <Border x:Name="border" CornerRadius="50" Background="{TemplateBinding Background}">
+                        <Image Source="/ClickFree;component/Resources/usb-png.png" Height="19"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource UsbButton.MouseOver.Background}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

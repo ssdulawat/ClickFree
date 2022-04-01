@@ -41,7 +41,7 @@
 
             <Button Grid.Column="4" Height="40"
                     VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
-                    Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.ContactUSCommand}" 
+                    Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.EailSupportCommand}" 
                     HorizontalAlignment="Right" VerticalAlignment="Top" Click="EmailBtn">
                 <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
                     <Image Height="30"  Source="/ClickFree;component/Resources/Navigation/e_email_letter_mail_icon.png" Margin="0,5,5,0" VerticalAlignment="Top"/>
@@ -58,19 +58,16 @@
                 <Image Height="20" Width="128" Source="/ClickFree;component/Resources/ChatSupport.png"  Margin="20,10,15,0" VerticalAlignment="Top"/>
             </Button>
 
-            <Button Grid.Column="6" Style="{StaticResource USBButtonStyle}" Margin="10,0,15,0" Background="Green">
+            <Button Name="usbButton" Grid.Column="6" Style="{StaticResource USBButtonStyle}" Margin="10,0,15,0">
                 <Button.ToolTip>
                     <ToolTip>
                         <StackPanel Orientation="Vertical">
-                            <Label Content="Connected" Margin="10 5" FontWeight="Bold"></Label>
+                            <Label Name="connection" Margin="10 5" FontWeight="Bold"></Label>
                             <Line Stroke="Black" StrokeThickness="2" X2="200"></Line>
-                            <Label Content="143 GB Available" Margin="10 5" FontWeight="Bold"></Label>
+                            <Label Name="space" Margin="10 5" FontWeight="Bold"></Label>
                         </StackPanel>
                     </ToolTip>
                 </Button.ToolTip>
-                <StackPanel Orientation="Horizontal" >
-                    <Image Height="19"  Source="/ClickFree;component/Resources/usb-png.png"/>
-                </StackPanel>
             </Button>
         </Grid>
 
@@ -96,18 +93,19 @@
                             Command="{Binding Path=Navigation.GetHelpCommand}"/>
                     <Button Content="Erase Device" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.EraseCommand}" />
-                    <Button Content="Language" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Language" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left" IsEnabled="False"/>
                     <Button Content="Contact Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.ContactUSCommand}"/>
-                    <Button Content="About Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="About Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left" IsEnabled="False"/>
+
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                    <Button Content="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

@@ -87,4 +87,6 @@
     <SolidColorBrush x:Key="ButtonMain.Disabled.Border" Color="#54BAF4" Opacity="0.1"/>
     <SolidColorBrush x:Key="ButtonMain.Disabled.Foreground" Color="#56BCF5" />
 
+    <SolidColorBrush x:Key="UsbButton.MouseOver.Background" Color="#54BAF4" Opacity="0.2"/>
+
 </ResourceDictionary>

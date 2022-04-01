@@ -19,6 +19,7 @@ namespace ClickFree.ViewModel
         private ICommand mEULACommand = null;
         private ICommand mEraseCommand = null;
         private ICommand mChatSupportCommand = null;
+        private ICommand mEailSupportCommand = null;
         #endregion
 
         private NavigationVM mCurrentView = null;
@@ -84,6 +85,26 @@ namespace ClickFree.ViewModel
                 }
 
                 return mFAQCommand;
+            }
+        }
+
+        public ICommand EailSupportCommand
+        {
+            get
+            {
+                if (mEailSupportCommand == null)
+                {
+                    mEailSupportCommand = new RelayCommand(() =>
+                    {
+                        try
+                        {
+                            Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
+                        }
+                        catch { }
+                    });
+                }
+
+                return mEailSupportCommand;
             }
         }
 

@@ -23,6 +23,7 @@ namespace ClickFree
         ICommand EULACommand { get; }
         ICommand EraseCommand { get; }
         ICommand ChatSupportCommand { get; }
+        ICommand EailSupportCommand { get; }
         void NavigateTo(NavigateEnum navigateTo);
         void NavigateTo(NavigateEnum navigateTo, object parameter);
     }
