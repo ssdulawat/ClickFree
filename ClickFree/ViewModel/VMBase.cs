@@ -34,7 +34,7 @@ namespace ClickFree.ViewModel
 
         private void DriveManager_DriveStateChanged(DriveState state, UsbDisk disk)
         {
-            RaisePropertyChanged("HasUsbDrives");
+           RaisePropertyChanged("HasUsbDrives");
 
             OnDriveStateChanged(state, disk);
         }
