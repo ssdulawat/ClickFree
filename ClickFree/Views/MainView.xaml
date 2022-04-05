@@ -69,7 +69,7 @@
             <Button Content="Transfer your photos and videos to PC" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=TransferToPCCommand}"/>
             <Button Content="Backup your photos and videos to USB" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=BackupToUSBCommand}"/>
             <Button Content="View ClickFree" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=ViewClickFreeCommand}"/>
-            <!--<Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" Command="{Binding Path=BackupFromFacebookCommand}"/>-->
+            <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" Command="{Binding Path=BackupFromFacebookCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
