@@ -1,6 +1,7 @@
 ﻿using ClickFree.Helpers;
 using ClickFree.Windows;
 using GalaSoft.MvvmLight.CommandWpf;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
@@ -30,7 +31,7 @@ namespace ClickFree.ViewModel
                     {
                         if (DriveManager.CheckAccess())
                         {
-                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName);
+                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName, Environment.MachineName);
 
                             var ownerWindow = Application.Current.Windows[Application.Current.Windows.Count - 1];
                             BackupToClickFreeWindow window = new BackupToClickFreeWindow(Constants.DefaultBackUpFolders, toFolder)

@@ -185,7 +185,7 @@ namespace ClickFree.ViewModel
                     {
                         if (DriveManager.CheckAccess())
                         {
-                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName);
+                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName, Environment.MachineName);
 
                             var ownerWindow = Application.Current.Windows[Application.Current.Windows.Count - 1];
                             BackupToClickFreeWindow window = new BackupToClickFreeWindow(SelectedDirList.Select(s => s.Path).ToList(), toFolder)
