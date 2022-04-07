@@ -23,7 +23,6 @@ namespace ClickFree.Views
     /// </summary>
     public partial class MainView : UserControl
     {
-       
         public MainView()
         {
             InitializeComponent();
@@ -33,24 +32,51 @@ namespace ClickFree.Views
 
         public void MainBtn(object sender, System.EventArgs e)
         {
-            MainPanel.Visibility = Visibility.Visible;
+            bool ifDrive = DriveManager.HasUsbDrives;
+            if (ifDrive == true)
+            {
+                MainPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MainPanel.Visibility = Visibility.Hidden;
+            }
+            
             SettingsPanel.Visibility = Visibility.Hidden;
             AboutPanel.Visibility = Visibility.Hidden;
         }
 
         public void SettingsBtn(object sender, System.EventArgs e)
         {
+            bool ifDrive = DriveManager.HasUsbDrives;
+            if (ifDrive == true)
+            {
+                SettingsPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                SettingsPanel.Visibility = Visibility.Hidden;
+            }
             MainPanel.Visibility = Visibility.Hidden;
-            SettingsPanel.Visibility = Visibility.Visible;
             AboutPanel.Visibility = Visibility.Hidden;
+
             firstBorder.Background = Brushes.Transparent;
         }
 
         private void AboutBtnClick(object sender, RoutedEventArgs e)
         {
+            bool ifDrive = DriveManager.HasUsbDrives;
+            if (ifDrive == true)
+            {
+                AboutPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AboutPanel.Visibility = Visibility.Hidden;
+            }
             MainPanel.Visibility = Visibility.Hidden;
             SettingsPanel.Visibility = Visibility.Hidden;
-            AboutPanel.Visibility = Visibility.Visible;
+           
             firstBorder.Background = Brushes.Transparent;
             Yearlbl.Content = "© " + DateTime.Now.Year + " ClickFree. All rights reserved.";
         }
@@ -93,6 +119,26 @@ namespace ClickFree.Views
                     usbButton.Background = Brushes.Green;
                     connection.Content = "Connected";
                     space.Content = (float)Math.Round(gigabyteFs, 1) + " GB available out of " + (float)Math.Round(gigabyteS, 1) + " GB";
+
+                    if (mainButton.IsFocused)
+                    {
+                        MainPanel.Visibility = Visibility.Visible;
+                        SettingsPanel.Visibility = Visibility.Hidden;
+                        AboutPanel.Visibility = Visibility.Hidden;
+                    }
+                    else if (settingsButton.IsFocused)
+                    {
+                        MainPanel.Visibility = Visibility.Hidden;
+                        SettingsPanel.Visibility = Visibility.Visible;
+                        AboutPanel.Visibility = Visibility.Hidden;
+                    }
+                    else if (aboutButton.IsFocused)
+                    {
+                        MainPanel.Visibility = Visibility.Hidden;
+                        SettingsPanel.Visibility = Visibility.Hidden;
+                        AboutPanel.Visibility = Visibility.Visible;
+                    }
+                    
                 }
 
             }
@@ -101,6 +147,9 @@ namespace ClickFree.Views
                 usbButton.Background = Brushes.Red;
                 connection.Content = "Disconnected";
                 space.Content = "";
+                MainPanel.Visibility = Visibility.Hidden;
+                SettingsPanel.Visibility = Visibility.Hidden;
+                AboutPanel.Visibility = Visibility.Hidden;
             }
 
         }

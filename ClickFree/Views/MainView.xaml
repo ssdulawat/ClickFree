@@ -21,7 +21,7 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Button Width="60" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+            <Button Name="mainButton" Width="60" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
                     Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.BackCommand}"  Click="MainBtn">
                 <Grid>
                     <Border Name="firstBorder"  Opacity="0.4"/>
@@ -30,7 +30,7 @@
                 </Grid>
             </Button>
 
-            <Button Grid.Column="1" Style="{StaticResource MenuButtonStyle}" Click="SettingsBtn"
+            <Button Name="settingsButton" Grid.Column="1" Style="{StaticResource MenuButtonStyle}" Click="SettingsBtn"
                     HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid>
                     <Border/>
@@ -39,7 +39,7 @@
                 </Grid>
             </Button>
 
-            <Button Grid.Column="2" Style="{StaticResource MenuButtonStyle}" Click="AboutBtnClick"
+            <Button Name="aboutButton" Grid.Column="2" Style="{StaticResource MenuButtonStyle}" Click="AboutBtnClick"
                     HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid>
                     <Border/>
