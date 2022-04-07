@@ -965,7 +965,7 @@ namespace ClickFree.Helpers
 
                     string clickFree = Path.DirectorySeparatorChar + Constants.ClickFreeFolderName + Path.DirectorySeparatorChar;
                     string rootFolder = Path.GetDirectoryName(to);
-                    int index = 1;
+                    //int index = 1;
                     foreach (MediaResult backupFile in filesToBackup)
                     {
                         try
@@ -975,9 +975,9 @@ namespace ClickFree.Helpers
                             if (string.IsNullOrWhiteSpace(file.LocalPath))
                             {
                                 if (backupFile.IsVideo)
-                                    copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.mp4"));
+                                    copyToList.Add(Path.Combine(to, $"{backupFile.Id}.mp4"));
                                 else
-                                    copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.jpg"));
+                                    copyToList.Add(Path.Combine(to, $"{backupFile.Id}.jpg"));
                             }
                             else
                             {
@@ -985,23 +985,23 @@ namespace ClickFree.Helpers
                                 if (string.IsNullOrWhiteSpace(fileName))
                                 {
                                     if (backupFile.IsVideo)
-                                        copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.mp4"));
+                                        copyToList.Add(Path.Combine(to, $"{backupFile.Id}.mp4"));
                                     else
-                                        copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.jpg"));
+                                        copyToList.Add(Path.Combine(to, $"{backupFile.Id}.jpg"));
                                 }
                                 else
-                                    copyToList.Add(Path.Combine(to, $"{index}_{fileName}"));
+                                    copyToList.Add(Path.Combine(to, $"{fileName}"));
                             }
                         }
                         catch
                         {
                             if (backupFile.IsVideo)
-                                copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.mp4"));
+                                copyToList.Add(Path.Combine(to, $"{backupFile.Id}.mp4"));
                             else
-                                copyToList.Add(Path.Combine(to, $"{index}_{backupFile.Id}.jpg"));
+                                copyToList.Add(Path.Combine(to, $"{backupFile.Id}.jpg"));
                         }
 
-                        index++;
+                        //index++;
                     }
 
                     //raise start event

@@ -35,13 +35,24 @@ namespace ClickFree.Views
         {
             MainPanel.Visibility = Visibility.Visible;
             SettingsPanel.Visibility = Visibility.Hidden;
+            AboutPanel.Visibility = Visibility.Hidden;
         }
 
         public void SettingsBtn(object sender, System.EventArgs e)
         {
             MainPanel.Visibility = Visibility.Hidden;
             SettingsPanel.Visibility = Visibility.Visible;
+            AboutPanel.Visibility = Visibility.Hidden;
             firstBorder.Background = Brushes.Transparent;
+        }
+
+        private void AboutBtnClick(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Visibility = Visibility.Hidden;
+            SettingsPanel.Visibility = Visibility.Hidden;
+            AboutPanel.Visibility = Visibility.Visible;
+            firstBorder.Background = Brushes.Transparent;
+            Yearlbl.Content = "© " + DateTime.Now.Year + " ClickFree. All rights reserved.";
         }
 
         public void EmailBtn(object sender, System.EventArgs e)
@@ -94,5 +105,9 @@ namespace ClickFree.Views
 
         }
 
+        private void FormatClickFreeUSBBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

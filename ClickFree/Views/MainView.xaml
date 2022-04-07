@@ -39,6 +39,15 @@
                 </Grid>
             </Button>
 
+            <Button Grid.Column="2" Style="{StaticResource MenuButtonStyle}" Click="AboutBtnClick"
+                    HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <Grid>
+                    <Border/>
+                    <TextBlock Margin="16,0,0,0"  Text="About" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                               FontWeight="SemiBold" Foreground="White" FontSize="14" />
+                </Grid>
+            </Button>
+
             <Button Grid.Column="4" Height="40"
                     VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" 
                     Style="{StaticResource MenuButtonStyle}" Command="{Binding Path=Navigation.EailSupportCommand}" 
@@ -82,7 +91,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,70,0,15">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,15">
                 <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
             </TextBlock>
             <StackPanel Orientation="Horizontal">
@@ -105,10 +114,44 @@
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
 
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="AboutPanel" Visibility="Hidden">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,25">
+                <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                    <Label x:Name="Firmwarelbl" Content="Firmware version:" 
+                       VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
+                    <Label x:Name="FirmwareVersionlbl" Content="2101XKR"
+                       VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="40,0,0,0">
+                    <Label x:Name="Applicationlbl" Content="Application version:" FontSize="14"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                    <Label x:Name="AppVersionlbl" Content="[4.8.04084]" FontSize="14"
+                       VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="40,0,0,0">
+                    <Label x:Name="Addresslbl" Content="Address:" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" 
+                           Foreground="White" />
+                    <Label Content="17720 Oak Park Avenue," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                    <Label Content="Tinley Park, IL," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White"/>
+                    <Label Content="60477, USA" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,120,0,10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="Yearlbl" Foreground="White" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        
     </Grid>
 </UserControl>
