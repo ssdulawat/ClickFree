@@ -24,6 +24,7 @@ namespace ClickFree
         ICommand EraseCommand { get; }
         ICommand ChatSupportCommand { get; }
         ICommand EailSupportCommand { get; }
+        ICommand FormatClickFreeCommand { get; }
         void NavigateTo(NavigateEnum navigateTo);
         void NavigateTo(NavigateEnum navigateTo, object parameter);
     }

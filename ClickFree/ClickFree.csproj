@@ -183,6 +183,9 @@
     <Compile Include="Windows\FacebookLoginWindow.xaml.cs">
       <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\FormatClickFreeWindow.xaml.cs">
+      <DependentUpon>FormatClickFreeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MessageBoxWindow.xaml.cs">
       <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
     </Compile>
@@ -271,6 +274,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\FacebookLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FormatClickFreeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

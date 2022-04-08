@@ -203,4 +203,38 @@
         </Setter>
     </Style>
 
+    <!--format-->
+    <Style x:Key="FormatClickFreeWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="444" />
+        <Setter Property="Height" Value="220" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource FormatClickFreeWindowBackground}" BorderBrush="{StaticResource FormatClickFreeWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Combo box usb list-->
+    <Style x:Key="UsbListComboBoxStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Blue"/>
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

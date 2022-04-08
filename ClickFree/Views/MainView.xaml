@@ -11,7 +11,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="92" />
-                <ColumnDefinition Width="92"/>
+                <ColumnDefinition Width="76"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -91,7 +91,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,15">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,65,0,15">
                 <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
             </TextBlock>
             <StackPanel Orientation="Horizontal">
@@ -114,7 +114,7 @@
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click" Command="{Binding Path=Navigation.FormatClickFreeCommand}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

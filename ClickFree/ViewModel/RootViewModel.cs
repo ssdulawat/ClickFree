@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
+using ClickFree.Windows;
 
 namespace ClickFree.ViewModel
 {
@@ -20,6 +21,7 @@ namespace ClickFree.ViewModel
         private ICommand mEraseCommand = null;
         private ICommand mChatSupportCommand = null;
         private ICommand mEailSupportCommand = null;
+        private ICommand mFormatClickFreeCommand = null;
         #endregion
 
         private NavigationVM mCurrentView = null;
@@ -181,6 +183,23 @@ namespace ClickFree.ViewModel
                 }
 
                 return mEraseCommand;
+            }
+        }
+
+        public ICommand FormatClickFreeCommand
+        {
+            get
+            {
+                if (mFormatClickFreeCommand == null)
+                {
+                    mFormatClickFreeCommand = new RelayCommand(() =>
+                    {
+                        FormatClickFreeWindow win = new FormatClickFreeWindow();
+                        win.Show();
+                        });
+                }
+
+                return mFormatClickFreeCommand;
             }
         }
 
