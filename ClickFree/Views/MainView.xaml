@@ -114,7 +114,9 @@
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click" Command="{Binding Path=Navigation.FormatClickFreeCommand}"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click" />
+                    <!--Command="{Binding Path=Navigation.FormatClickFreeCommand}"-->
+
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -135,7 +137,7 @@
                 <StackPanel Orientation="Vertical" Margin="40,0,0,0">
                     <Label x:Name="Applicationlbl" Content="Application version:" FontSize="14"
                        VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
-                    <Label x:Name="AppVersionlbl" Content="[4.8.04084]" FontSize="14"
+                    <Label x:Name="AppVersionlbl" Content="1.0.0.0" FontSize="14"
                        VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
                 </StackPanel>
 
