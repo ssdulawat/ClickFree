@@ -1,7 +1,9 @@
 ﻿using ClickFree.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -23,8 +25,6 @@ namespace ClickFree.Views
     /// </summary>
     public partial class MainView : UserControl
     {
-       // public bool enableFormatButton = true;
-
         public MainView()
         {
             InitializeComponent();
@@ -80,7 +80,12 @@ namespace ClickFree.Views
             SettingsPanel.Visibility = Visibility.Hidden;
            
             firstBorder.Background = Brushes.Transparent;
-            Yearlbl.Content = "© " + DateTime.Now.Year + " ClickFree. All rights reserved.";
+            
+            disks = DriveManager.GetAvailableDisks();
+            var disk = disks.FirstOrDefault();
+            FirmwareVersionlbl.Content = disk.FirmwareRevision;
+
+            Yearlbl.Content = "© " + DateTime.Now.Year + " Me Too Software, Inc. All rights reserved.";
         }
 
         public void EmailBtn(object sender, System.EventArgs e)
@@ -156,10 +161,9 @@ namespace ClickFree.Views
 
         }
 
-        private void FormatButton_Click(object sender, RoutedEventArgs e)
+        private void FormatClickFreeUSBBtn_Click(object sender, RoutedEventArgs e)
         {
-            formatButton.IsHitTestVisible = false;
-            // enableFormatButton = false;
+
         }
     }
 }
