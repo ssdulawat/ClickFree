@@ -17,6 +17,8 @@ FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Views\TransferView.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\AppleFormatDetectedWindow.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\BackupFromFacebookWindow.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\BackupToClickFreeWindow.xaml;;
+FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\ClickFreeFormatProgress.xaml;;
+FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\ConfirmationWindow.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\FacebookLoginWindow.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\FormatClickFreeWindow.xaml;;
 FE:\Development\2022\ClickFreeGit\ClickFree\ClickFree\Windows\MessageBoxWindow.xaml;;

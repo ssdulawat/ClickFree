@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClickFree.Views;
 
 namespace ClickFree.Windows
 {
@@ -22,6 +23,17 @@ namespace ClickFree.Windows
         public FormatClickFreeWindow()
         {
             InitializeComponent();
+        }
+
+        public void CloseWindow(object sender, System.EventArgs e)
+        {
+            Hide();
+       }
+
+        public void Format(object sender, System.EventArgs e)
+        {
+            ConfirmationWindow win = new ConfirmationWindow();
+            win.Show();
         }
     }
 }

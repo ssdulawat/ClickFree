@@ -121,6 +121,7 @@
     <Compile Include="Controls\FileSelectionCtrl.xaml.cs">
       <DependentUpon>FileSelectionCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\BoolToIsHitVisibleConverter.cs" />
     <Compile Include="Converters\ValueComparerConverter.cs" />
     <Compile Include="Exceptions\UsbDriveNotFoundException.cs" />
     <Compile Include="Facebook\FacebookManager.cs" />
@@ -180,6 +181,12 @@
       <DependentUpon>BackupToClickFreeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\BaseWindow.cs" />
+    <Compile Include="Windows\ClickFreeFormatProgress.xaml.cs">
+      <DependentUpon>ClickFreeFormatProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConfirmationWindow.xaml.cs">
+      <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\FacebookLoginWindow.xaml.cs">
       <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
     </Compile>
@@ -270,6 +277,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\BackupToClickFreeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ClickFreeFormatProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConfirmationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

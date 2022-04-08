@@ -25,8 +25,6 @@ namespace ClickFree.Views
     /// </summary>
     public partial class MainView : UserControl
     {
-        List<UsbDisk> disks = new List<UsbDisk>();
-        
         public MainView()
         {
             InitializeComponent();
@@ -163,85 +161,9 @@ namespace ClickFree.Views
 
         }
 
-        //private void FormatClickFreeUSBBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    disks = DriveManager.GetAvailableDisks();
-        //    var disk = disks.FirstOrDefault();
-        //    var name = disk.Name.Split('\\')[0];
-        //    var isFormatted = FormatUSB(name);
-        //}
+        private void FormatClickFreeUSBBtn_Click(object sender, RoutedEventArgs e)
+        {
 
-        //public bool FormatUSB(string driveLetter, string fileSystem = "FAT32", bool quickFormat = true, int clusterSize = 4096,
-        //    string label = "USB_0000", bool enableCompression = false)
-        //{
-        //    try
-        //    {
-        //        //add logic to format Usb drive
-        //        //verify conditions for the letter format: driveLetter[0] must be letter. driveLetter[1] must be ":" and all the characters mustn't be more than 2
-        //        if (driveLetter.Length != 2 || driveLetter[1] != ':' || !char.IsLetter(driveLetter[0]))
-        //            return false;
-
-        //        //query and format given drive 
-        //        //best option is to use ManagementObjectSearcher
-
-        //        DirectoryInfo di = new DirectoryInfo(driveLetter);
-
-        //        foreach (FileInfo file in di.GetFiles())
-        //        {
-        //            try
-        //            {
-        //                file.Delete();
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                throw ex;
-        //            }
-        //        }
-        //        foreach (DirectoryInfo dir in di.GetDirectories())
-        //        {
-        //            try
-        //            {
-        //                dir.Delete(true);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                throw ex;
-        //            }
-        //        }
-
-        //        ManagementObjectSearcher searcher = new ManagementObjectSearcher(@"select * from Win32_Volume WHERE DriveLetter = '" + driveLetter + "'");
-        //        foreach (ManagementObject vi in searcher.Get())
-        //        {
-        //            try
-        //            {
-        //                var completed = false;
-        //                var watcher = new ManagementOperationObserver();
-
-        //                watcher.Completed += (sender, args) =>
-        //                {
-        //                    Console.WriteLine("USB format completed " + args.Status);
-        //                    completed = true;
-        //                };
-        //                watcher.Progress += (sender, args) =>
-        //                {
-        //                    Console.WriteLine("USB format in progress " + args.Current);
-        //                };
-
-        //                vi.InvokeMethod(watcher, "Format", new object[] { fileSystem, quickFormat, clusterSize, label, enableCompression });
-
-        //                while (!completed) { System.Threading.Thread.Sleep(1000); }
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                throw ex;
-        //            }
-        //        }
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        }
     }
 }

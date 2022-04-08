@@ -208,7 +208,7 @@
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="444" />
-        <Setter Property="Height" Value="220" />
+        <Setter Property="Height" Value="320" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="ShowInTaskbar" Value="False" />
@@ -216,6 +216,26 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
                     <Border CornerRadius="4" Background="{StaticResource FormatClickFreeWindowBackground}" BorderBrush="{StaticResource FormatClickFreeWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter x:Name="contentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--format-->
+    <Style x:Key="ConfirmationWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="400" />
+        <Setter Property="Height" Value="200" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border CornerRadius="4" Background="{StaticResource ConfirmationWindowBackground}" BorderBrush="{StaticResource ConfirmationWindowBorder}" BorderThickness="{TemplateBinding BorderThickness}">
                         <ContentPresenter x:Name="contentPresenter" />
                     </Border>
                 </ControlTemplate>

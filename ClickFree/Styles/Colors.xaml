@@ -12,8 +12,13 @@
     <SolidColorBrush x:Key="FacebookLoginWindowBackground" Color="#32373D"/>
 
     <!--format window-->
-    <SolidColorBrush x:Key="FormatClickFreeWindowBorder" Color="#000000" Opacity="0.3" />
-    <SolidColorBrush x:Key="FormatClickFreeWindowBackground" Color="#32373D"/>
+    <SolidColorBrush x:Key="FormatClickFreeWindowBorder" Color="#000000" Opacity="0.8" />
+    <SolidColorBrush x:Key="FormatClickFreeWindowBackground" Color="#32373D" Opacity="0.8" />
+
+    <!--confirmation window-->
+    <SolidColorBrush x:Key="ConfirmationWindowBorder" Color="#000000" Opacity="1.5" />
+    <SolidColorBrush x:Key="ConfirmationWindowBackground" Color="#32373D" Opacity="1.5"/>
+
 
     <!--progress-->
     <LinearGradientBrush x:Key="ProgressBar.Progress">
