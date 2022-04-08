@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\
 ClickFree
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\App.xaml
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\App.xaml
 211417105108
 
-561365472862
-82-1286557831
+561532799296
+82450153283
 Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\FormatClickFreeWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
 
-False
+True
 

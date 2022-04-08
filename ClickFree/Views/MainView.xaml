@@ -87,7 +87,7 @@
             <Button Content="Transfer your photos and videos to PC" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=TransferToPCCommand}"/>
             <Button Content="Backup your photos and videos to USB" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=BackupToUSBCommand}"/>
             <Button Content="View ClickFree" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=ViewClickFreeCommand}"/>
-            <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" Command="{Binding Path=BackupFromFacebookCommand}"/>
+            <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" IsEnabled="False" Command="{Binding Path=BackupFromFacebookCommand}"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
@@ -114,7 +114,8 @@
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click" Command="{Binding Path=Navigation.FormatClickFreeCommand}"/>
+                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Command="{Binding Path=Navigation.FormatClickFreeCommand}"/>
+                    <!--Click="FormatClickFreeUSBBtn_Click"-->
                 </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -128,7 +129,7 @@
                 <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                     <Label x:Name="Firmwarelbl" Content="Firmware version:" 
                        VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
-                    <Label x:Name="FirmwareVersionlbl" Content="2101XKR"
+                    <Label x:Name="FirmwareVersionlbl" Content=""
                        VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
                 </StackPanel>
 

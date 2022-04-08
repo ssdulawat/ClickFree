@@ -354,7 +354,8 @@ namespace ClickFree.Helpers
                                                                 FreeSpace = (ulong)volume["FreeSpace"],
                                                                 Size = (ulong)volume["Size"],
                                                                 FileSystem = volume["FileSystem"]?.ToString(),
-                                                                VolumeSerialNumber = volume["VolumeSerialNumber"]?.ToString()
+                                                                VolumeSerialNumber = volume["VolumeSerialNumber"]?.ToString(),
+                                                                FirmwareRevision = drive["FirmwareRevision"]?.ToString(),
                                                             };
 
                                                             disks.Add(disk);
@@ -497,6 +498,12 @@ namespace ClickFree.Helpers
         }
 
         public string VolumeSerialNumber
+        {
+            get;
+            internal set;
+        }
+
+        public object FirmwareRevision
         {
             get;
             internal set;
