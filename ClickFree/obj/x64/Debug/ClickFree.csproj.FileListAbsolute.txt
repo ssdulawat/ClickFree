@@ -212,3 +212,8 @@ C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Cli
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csproj.CopyComplete
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.exe
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.pdb
+C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ConfirmationWindow.g.cs
+C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ConfirmationWindow.baml
+C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ClickFreeFormatProgress.g.cs
+C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ClickFreeFormatProgress.baml

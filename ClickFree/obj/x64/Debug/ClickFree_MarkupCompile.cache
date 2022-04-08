@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\App.xaml
-211417105108
+23-1819952263
 
-521757779152
+55-782532826
 82-1286557831
-Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\FormatClickFreeWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
+Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\ClickFreeFormatProgress.xaml;Windows\ConfirmationWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\FormatClickFreeWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
 
 False
 

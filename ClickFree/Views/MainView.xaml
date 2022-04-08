@@ -114,7 +114,8 @@
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Click="FormatClickFreeUSBBtn_Click" Command="{Binding Path=Navigation.FormatClickFreeCommand}"/>
+                    <Button Name="formatButton" Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" 
+                            Command="{Binding Path=Navigation.FormatClickFreeCommand}" Click="FormatButton_Click" IsHitTestVisible="True" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

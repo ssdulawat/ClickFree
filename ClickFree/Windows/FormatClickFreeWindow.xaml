@@ -3,17 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClickFree.Windows" WindowStartupLocation="CenterOwner"
+        xmlns:local="clr-namespace:ClickFree.Windows" WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="FormatClickFreeWindow" Style="{StaticResource FormatClickFreeWindowStyle}">
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Name="FormatPanel" Visibility="Visible">
             
-            <ComboBox Name="UsbListComboBox" Width="275" Height="35" HorizontalAlignment="Center" Margin="20"
+            <ComboBox Name="UsbListComboBox" Width="350" Height="35" HorizontalAlignment="Center" Margin="20"
                       Foreground="White" Background="Blue" Text="Select the USB">
             </ComboBox>
-            <Button Content="Format" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
-                    Margin="20"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Format" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
+                    Margin="30" Width="150" Click="Format"/>
+                <Button Content="Cancel" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
+                    Margin="30" Width="150" Click="CloseWindow"/>
+            </StackPanel>
+           
         </StackPanel>
     </Grid>
 </Window>

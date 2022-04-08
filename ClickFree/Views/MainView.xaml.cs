@@ -23,6 +23,8 @@ namespace ClickFree.Views
     /// </summary>
     public partial class MainView : UserControl
     {
+       // public bool enableFormatButton = true;
+
         public MainView()
         {
             InitializeComponent();
@@ -154,9 +156,10 @@ namespace ClickFree.Views
 
         }
 
-        private void FormatClickFreeUSBBtn_Click(object sender, RoutedEventArgs e)
+        private void FormatButton_Click(object sender, RoutedEventArgs e)
         {
-
+            formatButton.IsHitTestVisible = false;
+            // enableFormatButton = false;
         }
     }
 }
