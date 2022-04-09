@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ClickFree.Windows"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="ConfirmationWindow"
+        Loaded="Window_Loaded"
         Style="{StaticResource ConfirmationWindowStyle}">
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Name="FormatPanel" Visibility="Visible">

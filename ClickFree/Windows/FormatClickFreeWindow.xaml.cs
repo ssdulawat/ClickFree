@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClickFree.Helpers;
 using ClickFree.Views;
 
 namespace ClickFree.Windows
@@ -20,6 +21,9 @@ namespace ClickFree.Windows
     /// </summary>
     public partial class FormatClickFreeWindow : Window
     {
+        List<UsbDisk> disks = new List<UsbDisk>();
+        List<string> USBNameList = new List<string>();
+
         public FormatClickFreeWindow()
         {
             InitializeComponent();
@@ -27,13 +31,53 @@ namespace ClickFree.Windows
 
         public void CloseWindow(object sender, System.EventArgs e)
         {
-            Hide();
-       }
+            Close();
+        }
 
         public void Format(object sender, System.EventArgs e)
         {
             ConfirmationWindow win = new ConfirmationWindow();
             win.Show();
+
+            string selectedDrive = Convert.ToString(UsbListComboBox.SelectedValue);
+            ConfirmationWindow confirmation = new ConfirmationWindow(selectedDrive);
+
+            // win.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            disks = DriveManager.GetAvailableDisks();
+            foreach (var disk in disks)
+            {
+                var name = disk.Name.Split('\\')[0];
+                USBNameList.Add(name);
+            }
+            UsbListComboBox.ItemsSource = USBNameList;
+            FormatBtn.IsEnabled = false;
+        }
+
+        private void UsbListComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (UsbListComboBox.SelectedValue == null)
+            {
+                FormatBtn.IsEnabled = false;
+            }
+            else
+            {
+                FormatBtn.IsEnabled = true;
+            }
+            
+        }
+
+        //private void Format(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+        //private void CloseWindow(object sender, RoutedEventArgs e)
+        //{
+
+        //}
     }
 }
