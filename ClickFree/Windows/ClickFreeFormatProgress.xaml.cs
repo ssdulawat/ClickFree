@@ -22,8 +22,8 @@ namespace ClickFree.Windows
     public partial class ClickFreeFormatProgress : Window
     {
         string selectedDriveFormat;
-        public int TotalCount;
-        public int CurrentCount;
+        public int TotalCount = 0;
+        public int CurrentCount = 0;
 
         public ClickFreeFormatProgress()
         {
@@ -37,6 +37,7 @@ namespace ClickFree.Windows
             TotalCount = totalCount;
             progress.Minimum = 0;
             progress.Maximum = TotalCount;
+            progress.Value = CurrentCount;
             var isFormatted = FormatUSB(selectedDriveFormat);
             if (isFormatted)
             {
@@ -87,8 +88,8 @@ namespace ClickFree.Windows
                     try
                     {
                         file.Delete();
-                        CurrentCount--;
-                        progress.Value = CurrentCount;
+                        TotalCount--;
+                        progress.Value = TotalCount;
                     }
                     catch (Exception ex)
                     {
@@ -100,8 +101,8 @@ namespace ClickFree.Windows
                     try
                     {
                         dir.Delete(true);
-                        CurrentCount--;
-                        progress.Value = CurrentCount;
+                        TotalCount--;
+                        progress.Value = TotalCount;
                     }
                     catch (Exception ex)
                     {

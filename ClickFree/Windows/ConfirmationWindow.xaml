@@ -15,7 +15,7 @@
                 <Run Text="Are you sure to format the USB?" FontFamily="Josefin Sans" Foreground="White" />
             </TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Yes" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
+                <Button x:Name="yesBtn" Content="Yes" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
                     Margin="20" Width="100" Click="YesButton_Click"/>
                 <Button Content="No" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Center"
                     Margin="20" Width="100" Click="NoButton_Click"/>

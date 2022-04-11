@@ -195,8 +195,9 @@ namespace ClickFree.ViewModel
                     mFormatClickFreeCommand = new RelayCommand(() =>
                     {
                         FormatClickFreeWindow win = new FormatClickFreeWindow();
-                        win.Show();
-                        });
+                       
+                        win.ShowDialog();
+                    });
                 }
 
                 return mFormatClickFreeCommand;
