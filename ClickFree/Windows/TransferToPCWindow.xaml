@@ -26,11 +26,13 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Text="Processing" Margin="0,0,0,10" Foreground="White" />
-            <ProgressBar x:Name="progress" Grid.Row="1" Height="4" Value="{Binding CurrentSize}"
-                         Minimum="0" Maximum="{Binding TotalSize}"
+            
+            <ProgressBar x:Name="progress" Grid.Row="1" Height="4" Value="{Binding CurrentSize}" Minimum="0" Maximum="{Binding TotalSize}"
                          Style="{DynamicResource TransferProgressBarStyle}"/>
+            
             <TextBlock x:Name="status" Text="{Binding Status}" Grid.Row="2" Margin="0,7,0,0"
                        FontFamily="Montserrat" FontSize="14" TextWrapping="Wrap" LineHeight="20" Foreground="#B2B2B2"/>
+            
         </Grid>
 
         <Button Content="Cancel" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"

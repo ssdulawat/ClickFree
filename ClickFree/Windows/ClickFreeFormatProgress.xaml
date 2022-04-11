@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClickFree.Windows"
+        Loaded="Window_Loaded"
         mc:Ignorable="d"  Style="{StaticResource TransferWindowStyle}" WindowStartupLocation="CenterScreen"
         Title="ClickFreeFormatProgress" Height="203" Width="447">
     <Grid>
@@ -23,13 +24,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Text="Processing" Margin="0,0,0,10" Foreground="White" />
-            <ProgressBar x:Name="progress" Grid.Row="1" Height="4"
-                         Minimum="0"  Style="{DynamicResource TransferProgressBarStyle}"/>
-            <TextBlock x:Name="status" Grid.Row="2" Margin="0,7,0,0"
+
+            <ProgressBar x:Name="progress" Grid.Row="1" Height="4" Value="{Binding CurrentCount}" Minimum="0" Maximum="{Binding TotalCount}" 
+                         Style="{DynamicResource TransferProgressBarStyle}"/>
+
+            <TextBlock x:Name="status" Grid.Row="2" Margin="0,7,0,0" Text="{Binding Status}"
                        FontFamily="Montserrat" FontSize="14" TextWrapping="Wrap" LineHeight="20" Foreground="#B2B2B2"/>
         </Grid>
 
-        <Button Content="Cancel" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+        <Button Content="Hide Progress" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
                 Style="{StaticResource TransferCancelButtonStyle}" Click="CancelButton_Click"/>
     </Grid>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\_Projects\Freelance\ClickFree\ClickFree\ClickFree\obj\x64\Release\
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\
 ClickFree
 none
 false
 TRACE
-D:\_Projects\Freelance\ClickFree\ClickFree\ClickFree\App.xaml
-20-1916756634
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\App.xaml
+23-1819952263
 
-51-773964806
-821660108406
-Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
+55-782532826
+82450153283
+Controls\FileSelectionCtrl.xaml;Controls\WindowsTitle.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\Colors.xaml;Styles\General.xaml;Views\BackupFacebookDestView.xaml;Views\BackupFacebookMainView.xaml;Views\BackupFacebookSelectImagesView.xaml;Views\BackupToUSBMainView.xaml;Views\BackupToUSBSelectView.xaml;Views\MainView.xaml;Views\OnboardingView.xaml;Views\TransferView.xaml;Windows\AppleFormatDetectedWindow.xaml;Windows\BackupFromFacebookWindow.xaml;Windows\BackupToClickFreeWindow.xaml;Windows\ClickFreeFormatProgress.xaml;Windows\ConfirmationWindow.xaml;Windows\FacebookLoginWindow.xaml;Windows\FormatClickFreeWindow.xaml;Windows\MessageBoxWindow.xaml;Windows\TransferToPCWindow.xaml;
 
 False
 
