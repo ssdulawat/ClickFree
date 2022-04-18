@@ -81,13 +81,13 @@
         </Grid>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="MainPanel" Visibility="Visible">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,25">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,65,0,25">
                 <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
             </TextBlock>
             <Button Content="Transfer your photos and videos to PC" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=TransferToPCCommand}"/>
             <Button Content="Backup your photos and videos to USB" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=BackupToUSBCommand}"/>
             <Button Content="View ClickFree" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=ViewClickFreeCommand}"/>
-            <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" IsEnabled="False" Command="{Binding Path=BackupFromFacebookCommand}"/>
+            <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" IsEnabled="True" Command="{Binding Path=BackupFromFacebookCommand}"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
@@ -122,7 +122,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="AboutPanel" Visibility="Hidden">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,80,0,25">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,65,0,25">
                 <Run Text="Click" FontFamily="Josefin Sans" Foreground="#54BAF4" /><Run Text="Free" FontFamily="Jura" Foreground="White"/>
             </TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -137,7 +137,7 @@
                 <StackPanel Orientation="Vertical" Margin="40,0,0,0">
                     <Label x:Name="Applicationlbl" Content="Application version:" FontSize="14"
                        VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
-                    <Label x:Name="AppVersionlbl" Content="1.0.0.0" FontSize="14"
+                    <Label x:Name="AppVersionlbl" Content="1.0.0.1" FontSize="14"
                        VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
                 </StackPanel>
 

@@ -17,8 +17,10 @@ namespace ClickFree.Facebook
         #region Constants
 
         public const string RedirectURL = "https://www.datalogixxmemory.com/";
-        public const string AppID = "131694084920793";
-        public const string AppSecret = "4448ea782a48d0943eb6114313f7c50d";
+        // public const string AppID = "131694084920793"; // MoDisc
+        public const string AppID = "2798931540324100"; // ClickFree
+        // public const string AppSecret = "4448ea782a48d0943eb6114313f7c50d"; // MoDisc
+        public const string AppSecret = "cb53325913114906d47de40c49e1bd6b"; // ClickFree
         public const string OAuthURL = "https://facebook.com/dialog/oauth?client_id=" + AppID + "&redirect_uri=" + RedirectURL + "&scope=user_photos,user_videos&display=popup";
         public const string AccessTokenURL = "https://graph.facebook.com/oauth/access_token?client_id=" + AppID + "&redirect_uri=" + RedirectURL + "&client_secret=" + AppSecret + "&code=";
         public const string GetPicturesURL = "https://graph.facebook.com/v10.0/me/photos?fields=picture&limit={0}&access_token={1}";

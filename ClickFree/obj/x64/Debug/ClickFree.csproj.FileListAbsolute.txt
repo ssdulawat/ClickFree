@@ -213,6 +213,8 @@ C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\Cli
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.exe
 C:\Users\admin\Desktop\ClickFreeYashikaGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.pdb
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ClickFree.exe.config
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ClickFree.exe.manifest
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ClickFree.application
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ClickFree.exe
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ClickFree.pdb
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\CommonServiceLocator.dll
@@ -233,6 +235,7 @@ E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\Magick.NET-Q1
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\Magick.NET.Core.xml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\ZetaLongPaths.pdb
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Debug\de\ZetaLongPaths.resources.dll
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csprojAssemblyReference.cache
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Controls\FileSelectionCtrl.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Controls\WindowsTitle.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\MainWindow.g.cs
@@ -285,6 +288,9 @@ E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.g.r
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.Properties.Resources.resources
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csproj.GenerateResource.cache
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csproj.CoreCompileInputs.cache
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.TrustInfo.xml
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.exe.manifest
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.application
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.csproj.CopyComplete
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.exe
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.pdb

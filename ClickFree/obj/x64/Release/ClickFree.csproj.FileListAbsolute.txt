@@ -70,6 +70,8 @@ D:\_Projects\Freelance\ClickFree\ClickFree\ClickFree\obj\x64\Release\ClickFree.e
 D:\_Projects\Freelance\ClickFree\ClickFree\ClickFree\obj\x64\Release\ClickFree.pdb
 D:\_Projects\Freelance\ClickFree\ClickFree\ClickFree\obj\x64\Release\ClickFree.csprojAssemblyReference.cache
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\ClickFree.exe.config
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\ClickFree.exe.manifest
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\ClickFree.application
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\ClickFree.exe
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\ClickFree.pdb
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\bin\x64\Release\CommonServiceLocator.dll
@@ -143,6 +145,9 @@ E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.g
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.Properties.Resources.resources
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.csproj.GenerateResource.cache
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.csproj.CoreCompileInputs.cache
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.TrustInfo.xml
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.exe.manifest
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.application
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.csproj.CopyComplete
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.exe
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Release\ClickFree.pdb

@@ -75,8 +75,8 @@ namespace ClickFree.Windows
                     WinAPI.SetWindowLong(windowHandle, WinAPI.GWL_STYLE, WinAPI.GetWindowLong(windowHandle, WinAPI.GWL_STYLE) & ~WinAPI.WS_MAXIMIZEBOX);
                 }
 
-                this.Height = 380;
-                this.Width = 360;
+                this.Height = 580;
+                this.Width = 660;
                 this.NavigateToLogin();
                 this.AllowsTransparency = false;
                 this.WindowStyle = WindowStyle.ThreeDBorderWindow;
