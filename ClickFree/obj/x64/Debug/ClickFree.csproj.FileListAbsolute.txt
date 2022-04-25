@@ -254,6 +254,7 @@ E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\Click
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ConfirmationWindow.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\FacebookLoginWindow.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\FormatClickFreeWindow.g.cs
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\InstagramLoginWindow.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\MessageBoxWindow.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\TransferToPCWindow.g.cs
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\App.g.cs
@@ -282,6 +283,7 @@ E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\Click
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\ConfirmationWindow.baml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\FacebookLoginWindow.baml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\FormatClickFreeWindow.baml
+E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\InstagramLoginWindow.baml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\MessageBoxWindow.baml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\Windows\TransferToPCWindow.baml
 E:\Development\2022\ClickFreeGit\ClickFree\ClickFree\obj\x64\Debug\ClickFree.g.resources

@@ -16,10 +16,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>E:\Me Too Software\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -27,11 +27,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://localhost/</InstallUrl>
     <ProductName>Me Too Software Release</ProductName>
     <PublisherName>Me Too Software INC</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -169,6 +170,7 @@
     <Compile Include="Helpers\TransferManager.cs" />
     <Compile Include="Helpers\WinAPI.cs" />
     <Compile Include="INavigation.cs" />
+    <Compile Include="Instagram\InstagramManager.cs" />
     <Compile Include="ViewModel\BackupDialogVM.cs" />
     <Compile Include="ViewModel\BackupFacebookDestVM.cs" />
     <Compile Include="ViewModel\BackupFacebookMainVM.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="ViewModel\BackupToUSBMainVM.cs" />
     <Compile Include="ViewModel\BackupToUSBSelectVM.cs" />
     <Compile Include="ViewModel\FacebookLoginDialogVM.cs" />
+    <Compile Include="ViewModel\InstagramLoginDialogVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OnboardingVM.cs" />
@@ -230,6 +233,9 @@
     </Compile>
     <Compile Include="Windows\FormatClickFreeWindow.xaml.cs">
       <DependentUpon>FormatClickFreeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\InstagramLoginWindow.xaml.cs">
+      <DependentUpon>InstagramLoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MessageBoxWindow.xaml.cs">
       <DependentUpon>MessageBoxWindow.xaml</DependentUpon>
@@ -331,6 +337,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\FormatClickFreeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InstagramLoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -459,6 +469,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Instagram.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

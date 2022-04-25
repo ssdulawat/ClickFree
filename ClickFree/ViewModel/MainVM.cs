@@ -1,5 +1,6 @@
 ﻿using ClickFree.Facebook;
 using ClickFree.Helpers;
+using ClickFree.Instagram;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Diagnostics;
 using System.Windows.Input;
@@ -16,6 +17,7 @@ namespace ClickFree.ViewModel
         private ICommand mBackupToUSBCommand = null;
         private ICommand mBackupFromFacebookCommand = null;
         private ICommand mViewClickFreeCommand = null;
+        private ICommand mBackupFromInstagramCommand = null;
 
         #endregion
 
@@ -104,6 +106,25 @@ namespace ClickFree.ViewModel
                 }
 
                 return mViewClickFreeCommand;
+            }
+        }
+
+        public ICommand BackupFromInstagramCommand
+        {
+            get
+            {
+                if (mBackupFromInstagramCommand == null)
+                {
+                    mBackupFromInstagramCommand = new RelayCommand(() =>
+                    {
+                        if (InstagramManager.CheckAuthorization())
+                        {
+                            NavigateTo(NavigateEnum.BackupFacebookMain);
+                        }
+                    });
+                }
+
+                return mBackupFromFacebookCommand;
             }
         }
 

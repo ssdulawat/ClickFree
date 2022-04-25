@@ -869,4 +869,55 @@
         </Setter>
     </Style>
 
+    <!--transfer to usb from instagram buttons view-->
+    <Style x:Key="BackupFromInstagramToUSBMainButtonStyle" TargetType="Button">
+        <Setter Property="Margin" Value="0,10,0,10" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Width" Value="326" />
+        <Setter Property="Height" Value="38" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
+        <Setter Property="Background" Value="{StaticResource MainPageRoundButtonBackground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="23" Background="{TemplateBinding Background}">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="270" ShadowDepth="4" Opacity="0.25" />
+                        </Border.Effect>
+                        <Grid>
+                            <Image Width="24" Height="24" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="9,0,0,0"
+                                   Source="/Resources/Instagram.png" />
+
+                            <TextBlock x:Name="content" Text="{TemplateBinding Content}" VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" 
+                                       FontWeight="{TemplateBinding FontWeight}" FontFamily="{TemplateBinding FontFamily}" 
+                                       Foreground="{TemplateBinding Foreground}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}" />
+                            <Setter Property="TextElement.Foreground" TargetName="content" Value="{StaticResource Button.MouseOver.Foreground}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}" />
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}" />
+                            <Setter Property="TextElement.Foreground" TargetName="content" Value="{StaticResource Button.Disabled.Foreground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

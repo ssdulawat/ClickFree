@@ -88,6 +88,7 @@
             <Button Content="Backup your photos and videos to USB" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=BackupToUSBCommand}"/>
             <Button Content="View ClickFree" Style="{StaticResource MainViewRoundButtonStyle}" Command="{Binding Path=ViewClickFreeCommand}"/>
             <Button Content="Backup from Facebook" Style="{StaticResource BackupFromFacebookToUSBMainButtonStyle}" IsEnabled="True" Command="{Binding Path=BackupFromFacebookCommand}"/>
+            <Button Content="Backup from Instagram" Style="{StaticResource BackupFromInstagramToUSBMainButtonStyle}" IsEnabled="True" Command="{Binding Path=BackupFromInstagramCommand}"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="SettingsPanel" Visibility="Hidden">
