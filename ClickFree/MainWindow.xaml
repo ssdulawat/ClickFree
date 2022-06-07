@@ -19,6 +19,8 @@
         <DataTemplate DataType="{x:Type vm:MainVM}" >
             <views:MainView/>
         </DataTemplate>
+        
+        
 
         <DataTemplate DataType="{x:Type vm:TransferVM}" >
             <views:TransferView />
