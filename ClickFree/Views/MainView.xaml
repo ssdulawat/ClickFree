@@ -113,7 +113,7 @@
                     <Button Content="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"   Command="{Binding Path=Navigation.HowtovideoCommand}"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" IsHitTestVisible="True" HorizontalAlignment="Right" 
                             Command="{Binding Path=Navigation.FormatClickFreeCommand}" />
@@ -138,16 +138,17 @@
                 <StackPanel Orientation="Vertical" Margin="40,0,0,0">
                     <Label x:Name="Applicationlbl" Content="Application version:" FontSize="14"
                        VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
-                    <Label x:Name="AppVersionlbl" Content="1.0.0.1" FontSize="14"
+                    <Label x:Name="AppVersionlbl"  FontSize="14"
                        VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="40,0,0,0">
-                    <Label x:Name="Addresslbl" Content="Address:" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" 
+                    <Label x:Name="Addresslbl" Content="File System:" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" 
                            Foreground="White" />
-                    <Label Content="17720 Oak Park Avenue," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
-                    <Label Content="Tinley Park, IL," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White"/>
-                    <Label Content="60477, USA" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                    <Label x:Name="lblFileSystem" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />
+                    <!--<Label Content="17720 Oak Park Avenue," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
+                    <!--<Label Content="Tinley Park, IL," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White"/>
+                    <Label Content="60477, USA" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
                 </StackPanel>
 
             </StackPanel>

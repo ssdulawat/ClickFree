@@ -82,13 +82,14 @@ namespace ClickFree.Views
             }
             MainPanel.Visibility = Visibility.Hidden;
             SettingsPanel.Visibility = Visibility.Hidden;
-           
+
             firstBorder.Background = Brushes.Transparent;
-            
+
             disks = DriveManager.GetAvailableDisks();
             var disk = disks.FirstOrDefault();
             FirmwareVersionlbl.Content = disk.FirmwareRevision;
-
+            lblFileSystem.Content = disk.FileSystem;
+            AppVersionlbl.Content = "1.1.1.112";
             Yearlbl.Content = "© " + DateTime.Now.Year + " Me Too Software, Inc. All rights reserved.";
         }
 

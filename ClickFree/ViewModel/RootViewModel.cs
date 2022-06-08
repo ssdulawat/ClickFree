@@ -13,6 +13,7 @@ namespace ClickFree.ViewModel
         #region Fields
 
         #region Commands
+        private ICommand mHowtovideoCommand = null;
         private ICommand mBackCommand = null;
         private ICommand mFAQCommand = null;
         private ICommand mContactUSCommand = null;
@@ -32,7 +33,25 @@ namespace ClickFree.ViewModel
         #region Properties
 
         #region Commands
+        public ICommand HowtovideoCommand
+        {
+            get
+            {
+                if (mHowtovideoCommand == null)
+                {
+                    mHowtovideoCommand = new RelayCommand(() =>
+                    {
+                        try
+                        {
+                            Process.Start("https://www.youtube.com/channel/UCv-vJ0GsXsTLNRsiwSjVCZQ");
+                        }
+                        catch { }
+                    });
+                }
 
+                return mHowtovideoCommand;
+            }
+        }
         public ICommand BackCommand
         {
             get
@@ -79,8 +98,9 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
+                            Process.Start("https://easycustomersupport.com/");
                             //Process.Start("https://www.datalogixxmemory.com/faq");
-                            Process.Start("https://clickfreebackup.com/pages/technical-support");
+                            //Process.Start("https://clickfreebackup.com/pages/technical-support");
                         }
                         catch { }
                     });
@@ -100,7 +120,8 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
-                            Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
+                            Process.Start("http://download.metoosoftware.com/sendemail.aspx");
+                            //Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
                         }
                         catch { }
                     });
