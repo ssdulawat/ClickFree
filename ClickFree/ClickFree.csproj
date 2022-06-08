@@ -228,6 +228,9 @@
     <Compile Include="Windows\ConfirmationWindow.xaml.cs">
       <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ContactusWindow.xaml.cs">
+      <DependentUpon>ContactusWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\FacebookLoginWindow.xaml.cs">
       <DependentUpon>FacebookLoginWindow.xaml</DependentUpon>
     </Compile>
@@ -329,6 +332,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ContactusWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,6 +13,7 @@ namespace ClickFree.ViewModel
         #region Fields
 
         #region Commands
+
         private ICommand mHowtovideoCommand = null;
         private ICommand mBackCommand = null;
         private ICommand mFAQCommand = null;
@@ -141,8 +142,10 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
+                            ContactusWindow win = new ContactusWindow();
+                            win.ShowDialog();
                             //Process.Start("mailto:wecare@clickfreebackup.com?subject=Click Free (Windows)");
-                            Process.Start("https://clickfreebackup.com/pages/contact-us");
+                            //Process.Start("https://clickfreebackup.com/pages/contact-us");
                         }
                         catch { }
                     });

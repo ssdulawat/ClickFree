@@ -1,0 +1,155 @@
+﻿<Window x:Class="ClickFree.Windows.ContactusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClickFree.Windows"
+        mc:Ignorable="d"
+        Title="Contact us" Width="600" Height="400" Background="Transparent">
+    <Grid Width="Auto"  Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
+
+            <TextBlock  FontSize="34" Margin="10,30,0,0">
+                <Run Text="Contact Us"   FontFamily="Josefin Sans" Foreground="#54BAF4" />
+            </TextBlock>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Margin="10,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto">
+                </ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Resources/PhoneIcon.png" Width="30" Grid.Column="0" Height="30"  />
+
+            <Label x:Name="Phonelbl" Content="Phone :" 
+                       VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1"     FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
+
+            <TextBlock  x:Name="PhoneVallbl"  Text="8776799948"
+                           
+                       HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center"     FontFamily="Josefin Sans" Foreground="White" FontSize="14"></TextBlock>
+
+            <!--<Label x:Name="PhoneVallbl" 
+                           
+                       HorizontalAlignment="Center" Grid.Column="2"    FontFamily="Josefin Sans" Foreground="White" FontSize="14">
+                <TextBlock Text="8776799948"></TextBlock>
+            </Label>-->
+
+        </Grid>
+
+
+
+        <Grid Grid.Row="2" Margin="10,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"   >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto">
+                </ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Resources/ChatIcon.jpg" Width="30" Grid.Column="0"  Height="30"   />
+
+            <Label x:Name="ChatBestwaylbl" Content="Chat Best Way :" FontSize="14"  Grid.Column="1"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" />
+
+
+
+            <TextBlock FontSize="14"  Grid.Column="2"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Josefin Sans" Background="Transparent"  Foreground="White">
+                <Hyperlink >
+                    <TextBlock Text="Click Here" />
+                </Hyperlink>
+            </TextBlock>
+            <!--<Button x:Name="ChatLinklbl"    FontSize="14"  Grid.Column="2"
+                        HorizontalAlignment="Center" FontFamily="Josefin Sans" Background="Transparent"  Foreground="White">
+
+                <TextBlock TextDecorations="Underline" Text="Click Here" Cursor="Hand" Foreground="White" ></TextBlock>
+            </Button>-->
+
+
+        </Grid>
+
+
+
+        <Grid Grid.Row="3" Margin="10,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto">
+                </ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Resources/EmailIcon.png" Width="30" Height="30" Grid.Column="0"  />
+
+            <Label x:Name="ContactEmaillbl" Content="Email :" FontSize="14" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Josefin Sans" 
+                           Foreground="White" />
+            <Label x:Name="ContactEmailVallbl" Content="wecare@clickfreebackup.com" FontSize="14" Grid.Column="2"   HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" />
+
+        </Grid>
+
+
+        <!--<StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Name="AboutPanel" >
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Margin="0,65,0,0">
+                <Run Text="Contact Us" FontFamily="Josefin Sans" Foreground="#54BAF4" />
+            </TextBlock>
+
+          
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="/Resources/PhoneIcon.png" Width="30" Height="30" />
+
+                        <Label x:Name="Phonelbl" Content="Phone:" 
+                       VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
+                    </StackPanel>
+                    <Label x:Name="PhoneVallbl" Content="8776799948"
+                           
+                       VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" FontSize="14"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="/Resources/ChatIcon.jpg" Width="30" Height="30" />
+
+                        <Label x:Name="ChatBestwaylbl" Content="Chat Best Way:" FontSize="14"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" />
+                    </StackPanel>
+                    <Label x:Name="ChatLinklbl"  FontSize="14" Content="Click Here"
+                       VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="120,0,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="/Resources/EmailIcon.png" Width="30" Height="30" />
+
+                        <Label x:Name="ContactEmaillbl" Content="Email:" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Josefin Sans" 
+                           Foreground="White" />
+                    </StackPanel>
+                    <Label x:Name="ContactEmailVallbl" Content="wecare@clickfreebackup.com" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Josefin Sans" Foreground="White" />
+                    -->
+        <!--<Label Content="17720 Oak Park Avenue," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
+        <!--<Label Content="Tinley Park, IL," FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White"/>
+                    <Label Content="60477, USA" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Josefin Sans" Foreground="White" />-->
+        <!--
+                </StackPanel>
+
+            </StackPanel>
+            
+        </StackPanel>-->
+    </Grid>
+</Window>
