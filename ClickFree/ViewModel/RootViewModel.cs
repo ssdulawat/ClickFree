@@ -79,7 +79,7 @@ namespace ClickFree.ViewModel
                     {
                         try
                         {
-                            Process.Start("https://easycustomersupport.com/");
+                            Process.Start("https://download.metoosoftware.com/chatintegration.htm");
                         }
                         catch { }
                     });
