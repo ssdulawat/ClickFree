@@ -46,7 +46,7 @@ namespace ClickFree.Windows
                 ConfirmationWindow win = new ConfirmationWindow();
                 win.Show();
 
-                string selectedDrive = Convert.ToString(UsbListComboBox.SelectedValue);
+                string selectedDrive = Convert.ToString(UsbListComboBox.SelectedValue.ToString().Split('-')[0]);
                 ConfirmationWindow confirmation = new ConfirmationWindow(selectedDrive, this);
                 
             }
@@ -61,11 +61,12 @@ namespace ClickFree.Windows
             disks = DriveManager.GetAvailableDisks();
             foreach (var disk in disks)
             {
-                var name = disk.Name.Split('\\')[0];
+                var name = disk.Name.Split('\\')[0]+ "-Clickfree";
                 USBNameList.Add(name);
             }
             UsbListComboBox.ItemsSource = USBNameList;
             FormatBtn.IsEnabled = false;
+            UsbListComboBox.SelectedIndex = 0;
         }
 
         private void UsbListComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
