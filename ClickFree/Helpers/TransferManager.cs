@@ -202,6 +202,89 @@ namespace ClickFree.Helpers
             });
         }
 
+
+        public async Task Eraseprocess(List<string> from,FileManager.SearchParameters searchParameters = null)
+        {
+            await CancelAsync();
+
+            mCancellationTokenSource = new CancellationTokenSource();
+
+            if (searchParameters == null)
+                searchParameters = new FileManager.SearchParameters(FileManager.SearchFilterEnum.ALL);
+
+            mTransferTask = Task.Run(() =>
+            {
+                
+
+                SearchResult searchResult = new SearchResult();
+
+                try
+                {
+                    foreach (var f in from)
+                    {
+                        if (File.Exists(f))
+                        {
+                            File.Delete(f);
+                            searchResult.Files.Add(f);
+                        }
+                        else if (Directory.Exists(f))
+                        {
+
+
+                            var result = FileManager.Search(f, searchParameters, mCancellationTokenSource.Token);
+
+                            if (searchResult == null)
+                                searchResult = result;
+                            else
+                            {
+                                searchResult.Directories.AddRange(result.Directories);
+                                searchResult.Files.AddRange(result.Files);
+                                searchResult.Errors.AddRange(result.Errors);
+                                if (result.AppleFormatDetected)
+                                {
+                                    searchResult.AppleFormatDetected = true;
+                                }
+                            }
+
+                            RecursiveDelete(new DirectoryInfo(f));
+
+
+                        }
+                    }
+
+                    OnSearchFinished(searchResult);
+
+                    //check if operation cancelled
+                    if (mCancellationTokenSource.IsCancellationRequested)
+                    {
+                        OnFinished(new TransferFinishedInfo()
+                        {
+                            FailedReson = FailedReason.Cancelled
+                        });
+
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    var info = new TransferFinishedInfo()
+                    {
+                        FailedReson = FailedReason.Other,
+                    };
+
+                    info.Errors.Add(new ErrorInfo(""/*from*/, ex));
+
+                    OnFinished(info);
+
+                    return;
+                }
+
+                EraseClickFree(searchResult.Files);
+            });
+        }
+
+
+
         public async Task ScanAndBackup(List<string> from, string to, FileManager.SearchParameters searchParameters = null)
         {
             await CancelAsync();
@@ -942,6 +1025,209 @@ namespace ClickFree.Helpers
                 {
                 });
             }
+        }
+
+
+        private void EraseClickFree(List<string> filesTobackup)
+        {
+            if (filesTobackup != null && filesTobackup.Count > 0)
+            {
+                TransferProgressInfo progressInfo = new TransferProgressInfo()
+                {
+                    TotalFiles = filesTobackup.Count,
+                    CurrentPosition = 1
+                };
+
+                TransferFinishedInfo finishedInfo = new TransferFinishedInfo()
+                {
+                    TotalFiles = filesTobackup.Count
+                };
+
+                try
+                {
+                    List<string> copyToList = new List<string>();
+
+                    string clickFree = Path.DirectorySeparatorChar + Constants.ClickFreeFolderName + Path.DirectorySeparatorChar;
+                    
+                    foreach (string backupFile in filesTobackup)
+                    {
+                        string endPath;
+                        if (backupFile.Contains(clickFree))
+                        {
+                            int index = backupFile.LastIndexOf(Constants.ClickFreeFolderName) + Constants.ClickFreeFolderName.Length;
+
+                            endPath = backupFile.Substring(index, backupFile.Length - index);
+
+                            if (endPath.StartsWith($"{Path.DirectorySeparatorChar}"))
+                                endPath = endPath.Substring(1, endPath.Length - 1);
+
+                            //copyToList.Add(Path.Combine(rootFolder, endPath));
+                        }
+                        else
+                        {
+                            //endPath = backupFile.Split(new[] { Path.VolumeSeparatorChar }, StringSplitOptions.RemoveEmptyEntries).Last();
+
+                            //if (endPath.StartsWith($"{Path.DirectorySeparatorChar}"))
+                            //    endPath = endPath.Substring(1, endPath.Length - 1);
+
+                            copyToList.Add(backupFile);
+                        }
+                    }
+
+                    //raise start event
+                    OnStart(new TransferStartInfo()
+                    {
+                        TotalFiles = progressInfo.TotalFiles,
+                        TotalSize = progressInfo.TotalFiles,
+                        CurrentPosition = 1
+                    });
+
+                    //calculate total size
+                    foreach (var file in filesTobackup)
+                    {
+                        try
+                        {
+                            //calc total files size
+                            progressInfo.TotalSize += new ZlpFileInfo(file).Length;
+                            finishedInfo.TotalSize = progressInfo.TotalSize;
+                        }
+                        catch (DirectoryNotFoundException notFoundException)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, notFoundException));
+
+                            CheckUSBDevice(notFoundException);
+                        }
+                        catch (UnauthorizedAccessException accessDenied)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, accessDenied));
+
+                            CheckUSBDevice(accessDenied);
+                        }
+                        catch (IOException ioException)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, ioException));
+                            /*LOG*/
+
+                            CheckUSBDevice(ioException, false);
+                        }
+                    }
+
+                    //raise start event
+                    OnStart(new TransferStartInfo()
+                    {
+                        TotalFiles = progressInfo.TotalFiles,
+                        TotalSize = progressInfo.TotalSize,
+                        CurrentPosition = 1
+                    });
+
+                    
+
+                    #region Common files
+                    //transfer data
+                    for (int i = 0, length = filesTobackup.Count; i < length; i++, progressInfo.CurrentPosition++)
+                    {
+                        mCancellationTokenSource.Token.ThrowIfCancellationRequested();
+
+                        string copyTo = copyToList[i];
+                        string file = filesTobackup[i];
+
+                        try
+                        {
+                            if(File.Exists(copyTo))
+                            {
+                                File.Delete(copyTo);
+                            }
+                            else if(Directory.Exists(copyTo))
+                            {
+                                RecursiveDelete(new DirectoryInfo(copyTo));
+                            }
+                        }
+                        catch (OperationCanceledException operationCanceled)
+                        {
+                            throw operationCanceled;
+                        }
+                        catch (DirectoryNotFoundException notFoundException)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, notFoundException));
+                            /*LOG*/
+
+                            CheckUSBDevice(notFoundException);
+                        }
+                        catch (UnauthorizedAccessException accessDenied)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, accessDenied));
+                            /*LOG*/
+
+                            CheckUSBDevice(accessDenied);
+                        }
+                        catch (IOException ioException)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, ioException));
+                            /*LOG*/
+
+                            CheckUSBDevice(ioException, false);
+                        }
+                        catch (Exception ex)
+                        {
+                            finishedInfo.Errors.Add(new ErrorInfo(file, ex));
+                            /*LOG*/
+
+                            CheckUSBDevice(ex);
+                        }
+                        finally
+                        {
+                            OnProgress(progressInfo);
+                        }
+                    }
+
+                    #endregion
+                }
+                catch (UsbDriveNotFoundException)
+                {
+                    finishedInfo.FailedReson = FailedReason.UsbNotFound;
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    finishedInfo.FailedReson = FailedReason.FolderNotFound;
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    finishedInfo.FailedReson = FailedReason.AccessDenied;
+                }
+                catch (OperationCanceledException)
+                {
+                    finishedInfo.FailedReson = FailedReason.Cancelled;
+                }
+                catch
+                {
+                    finishedInfo.FailedReson = FailedReason.Other;
+                }
+                finally
+                {
+                    finishedInfo.CurrentSize = progressInfo.CurrentSize;
+                    finishedInfo.CurrentPosition = --progressInfo.CurrentPosition;
+
+                    OnFinished(finishedInfo);
+                }
+            }
+            else
+            {
+                OnFinished(new TransferFinishedInfo()
+                {
+                });
+            }
+        }
+
+        public static void RecursiveDelete(DirectoryInfo baseDir)
+        {
+            if (!baseDir.Exists)
+                return;
+
+            foreach (var dir in baseDir.EnumerateDirectories())
+            {
+                RecursiveDelete(dir);
+            }
+            baseDir.Delete(true);
         }
 
         private void TransferFromFacebookToClickFree(string to, List<MediaResult> filesToBackup)

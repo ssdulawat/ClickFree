@@ -11,7 +11,8 @@ namespace ClickFree
         BackupToUSBSelect = 3,
         BackupFacebookMain = 4,
         BackupFacebookDest = 5,
-        BackupFacebookSelectImages = 6
+        BackupFacebookSelectImages = 6,
+        EraseDeviceSelect = 7
     }
 
     public interface INavigation

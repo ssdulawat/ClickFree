@@ -101,8 +101,7 @@
                             Command="{Binding Path=Navigation.FAQCommand}"/>
                     <Button Content="Get Help" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.GetHelpCommand}"/>
-                    <Button Content="Erase Device" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
-                            Command="{Binding Path=Navigation.EraseCommand}" />
+                    <Button Content="Erase Device" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left" Command="{Binding Navigation.TransferSelectedFilesCommand}"/>
                     <Button Content="Language" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left" IsEnabled="False"/>
                     <Button Content="Contact Us" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Left"
                             Command="{Binding Path=Navigation.ContactUSCommand}"/>

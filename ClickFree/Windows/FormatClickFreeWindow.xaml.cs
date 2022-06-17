@@ -81,5 +81,27 @@ namespace ClickFree.Windows
             }
             
         }
+
+        private void Format(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    this.FormatBtn.IsHitTestVisible = false;
+                });
+
+                ConfirmationWindow win = new ConfirmationWindow();
+                win.Show();
+
+                string selectedDrive = Convert.ToString(UsbListComboBox.SelectedValue.ToString().Split('-')[0]);
+                ConfirmationWindow confirmation = new ConfirmationWindow(selectedDrive, this);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

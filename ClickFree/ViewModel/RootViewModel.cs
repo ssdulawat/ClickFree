@@ -24,6 +24,7 @@ namespace ClickFree.ViewModel
         private ICommand mChatSupportCommand = null;
         private ICommand mEailSupportCommand = null;
         private ICommand mFormatClickFreeCommand = null;
+        private ICommand mTransferSelectedFilesCommand = null;
         #endregion
 
         private NavigationVM mCurrentView = null;
@@ -34,6 +35,25 @@ namespace ClickFree.ViewModel
         #region Properties
 
         #region Commands
+        public ICommand TransferSelectedFilesCommand
+        {
+            get
+            {
+                if (mTransferSelectedFilesCommand == null)
+                {
+                    mTransferSelectedFilesCommand = new RelayCommand(() =>
+                    {
+                        if (DriveManager.CheckAccess())
+                        {
+                            NavigateTo(NavigateEnum.EraseDeviceSelect);
+                        }
+                    });
+                }
+
+                return mTransferSelectedFilesCommand;
+            }
+        }
+
         public ICommand HowtovideoCommand
         {
             get
@@ -252,6 +272,7 @@ namespace ClickFree.ViewModel
             mViews.Add(NavigateEnum.TransferToPC, new TransferVM(this));
             mViews.Add(NavigateEnum.BackupToUSBMain, new BackupToUSBMainVM(this));
             mViews.Add(NavigateEnum.BackupToUSBSelect, new BackupToUSBSelectVM(this));
+            mViews.Add(NavigateEnum.EraseDeviceSelect, new EraseDeviceVM(this));
             mViews.Add(NavigateEnum.BackupFacebookMain, new BackupFacebookMainVM(this));
             mViews.Add(NavigateEnum.BackupFacebookDest, new BackupFacebookDestVM(this));
             mViews.Add(NavigateEnum.BackupFacebookSelectImages, new BackupFacebookSelectImagesVM(this));

@@ -26,6 +26,11 @@
             <views:TransferView />
         </DataTemplate>
 
+
+        <DataTemplate DataType="{x:Type vm:EraseDeviceVM}" >
+            <views:EraseDeviceView />
+        </DataTemplate>
+        
         <DataTemplate DataType="{x:Type vm:BackupToUSBMainVM}" >
             <views:BackupToUSBMainView />
         </DataTemplate>

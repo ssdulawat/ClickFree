@@ -10,18 +10,23 @@ namespace ClickFree.Windows
     public partial class BackupToClickFreeWindow : BaseWindow
     {
         #region Fields
-
+        private EraseDialogVM mEraseDialogVM;
         private BackupDialogVM mTransferDialogVM;
-
+        private bool IsEraseDevice = false;
         #endregion
 
         #region Properties
 
         public bool SuccessfullyBackuped
         {
+
             get
             {
-                return (mTransferDialogVM?.SuccessfullyBackuped).GetValueOrDefault(false);
+                if (!IsEraseDevice)
+                    return (mTransferDialogVM?.SuccessfullyBackuped).GetValueOrDefault(false);
+                else
+                    return (mEraseDialogVM?.SuccessfullyBackuped).GetValueOrDefault(false);
+
             }
         }
 
@@ -40,11 +45,29 @@ namespace ClickFree.Windows
             mTransferDialogVM.Finished += MTransferDialogVM_Finished;
         }
 
+
+        public BackupToClickFreeWindow(string toDir, List<string> from)
+        {
+            InitializeComponent();
+            IsEraseDevice = true;
+            this.DataContext = mEraseDialogVM = new EraseDialogVM(toDir, from);
+            mEraseDialogVM.Finished += mEraseDialogVM_Finished;
+        }
+
         #endregion
 
         #region Event handlers
 
         private void MTransferDialogVM_Finished()
+        {
+            if (CheckAccess())
+                this.Close();
+            else
+                Dispatcher.Invoke(this.Close);
+        }
+
+
+        private void mEraseDialogVM_Finished()
         {
             if (CheckAccess())
                 this.Close();
@@ -64,6 +87,10 @@ namespace ClickFree.Windows
             {
                 await mTransferDialogVM.StartBackup();
             }
+            if (mEraseDialogVM != null)
+            {
+                await mEraseDialogVM.StartErase();
+            }
         }
 
         protected override void OnClosed(EventArgs e)
@@ -74,6 +101,11 @@ namespace ClickFree.Windows
             {
                 mTransferDialogVM.Finished -= MTransferDialogVM_Finished;
                 mTransferDialogVM.Dispose();
+            }
+            if (mEraseDialogVM != null)
+            {
+                mEraseDialogVM.Finished -= mEraseDialogVM_Finished;
+                mEraseDialogVM.Dispose();
             }
         }
 

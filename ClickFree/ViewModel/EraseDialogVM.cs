@@ -9,7 +9,8 @@ using System.Windows.Input;
 
 namespace ClickFree.ViewModel
 {
-    public class BackupDialogVM : VMBase
+ 
+    public class EraseDialogVM : VMBase
     {
         #region Fields
 
@@ -107,14 +108,14 @@ namespace ClickFree.ViewModel
 
         #region Ctor
 
-        public BackupDialogVM(List<string> from, string toDir)
+        public EraseDialogVM(List<string> from, string toDir)
         {
             mFrom = from;
             mToDir = toDir;
         }
 
 
-        public BackupDialogVM(string toDir,List<string> from)
+        public EraseDialogVM(string toDir, List<string> from)
         {
             mFrom = from;
             mToDir = toDir;
@@ -123,37 +124,7 @@ namespace ClickFree.ViewModel
         #endregion
 
         #region Methods
-
-        public async Task<bool> StartBackup()
-        {
-            bool result = DriveManager.CheckAccess();
-
-            if (result)
-            {
-                if (mTransferManager != null)
-                {
-                    await mTransferManager.CancelAsync();
-                    mTransferManager.Start -= MTransferManager_Start;
-                    mTransferManager.Progress -= MTransferManager_Progress;
-                    mTransferManager.Finished -= MTransferManager_Finished;
-                    mTransferManager.SearchStart -= MTransferManager_SearchStart;
-                    mTransferManager.SearchFinished -= MTransferManager_SearchFinished;
-                }
-
-                mTransferManager = new TransferManager();
-                mTransferManager.Start += MTransferManager_Start;
-                mTransferManager.Progress += MTransferManager_Progress;
-                mTransferManager.Finished += MTransferManager_Finished;
-                mTransferManager.SearchStart += MTransferManager_SearchStart;
-                mTransferManager.SearchFinished += MTransferManager_SearchFinished;
-
-                await mTransferManager.ScanAndBackup(mFrom, mToDir);
-            }
-
-            return result;
-        }
-
-
+        
         public async Task<bool> StartErase()
         {
             bool result = DriveManager.CheckAccess();
@@ -197,12 +168,12 @@ namespace ClickFree.ViewModel
 
         private void MTransferManager_SearchFinished(FileManager.SearchResult obj)
         {
-            Status = $"Scanning is finished";
+            Status = $"Erasing is finished";
         }
 
         private void MTransferManager_SearchStart()
         {
-            Status = $"Scanning '{DriveManager.SelectedUSBDrive?.Name}'...";
+            Status = $"Erasing '{DriveManager.SelectedUSBDrive?.Name}'...";
         }
 
         private void MTransferManager_Finished(TransferManager.TransferFinishedInfo obj)
@@ -213,8 +184,8 @@ namespace ClickFree.ViewModel
             switch (obj.FailedReson)
             {
                 case TransferManager.FailedReason.AccessDenied:
-                    MessageBoxWindow.ShowMessageBox("Backup your photos and videos to PC",
-                                                    "Could not backup files. You dont have enought permissions for destination folder. Please restart the app as administrator and try again.",
+                    MessageBoxWindow.ShowMessageBox("Erase your photos and videos",
+                                                    "Could not Erase files. You dont have enought permissions for Folder. Please restart the app as administrator and try again.",
                                                     MessageBoxWindow.MessageBoxType.Error);
                     break;
                 case TransferManager.FailedReason.SearchFailed:
@@ -229,8 +200,8 @@ namespace ClickFree.ViewModel
                     break;
                 case TransferManager.FailedReason.None:
                 default:
-                    MessageBoxWindow.ShowMessageBox("Backup your photos and videos to USB",
-                                                    $"{obj.CurrentPosition} files were successfully backuped to your USB. Now you can view them in Click Free folder.",
+                    MessageBoxWindow.ShowMessageBox("Erase your photos and video",
+                                                    $"{obj.CurrentPosition} files were successfully Erased in your USB. Now you can view them in Click Free.",
                                                     MessageBoxWindow.MessageBoxType.Success,
                                                     () =>
                                                     {
@@ -249,7 +220,7 @@ namespace ClickFree.ViewModel
             CurrentSize = obj.CurrentSize;
             TotalSize = obj.TotalSize;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were Erased. Please wait.";
         }
 
         private void MTransferManager_Start(TransferManager.TransferStartInfo obj)
@@ -257,7 +228,7 @@ namespace ClickFree.ViewModel
             CurrentSize = obj.CurrentSize;
             TotalSize = obj.TotalSize;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were Erased. Please wait.";
         }
 
         #endregion
@@ -282,4 +253,5 @@ namespace ClickFree.ViewModel
 
         #endregion
     }
+
 }
