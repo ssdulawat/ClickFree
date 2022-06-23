@@ -18,6 +18,7 @@ namespace ClickFree.ViewModel
         private ICommand mBackupFromFacebookCommand = null;
         private ICommand mViewClickFreeCommand = null;
         private ICommand mBackupFromInstagramCommand = null;
+        private ICommand mDefaultFoldersCommand = null;
 
         #endregion
 
@@ -63,6 +64,26 @@ namespace ClickFree.ViewModel
                 }
 
                 return mTransferToPCCommand;
+            }
+        }
+
+        public ICommand DefaultFoldersCommand
+        {
+            get
+            {
+                if (mDefaultFoldersCommand == null)
+                {
+                    mDefaultFoldersCommand = new RelayCommand(() =>
+                    {
+                        NavigateTo(NavigateEnum.DefaultFolders);
+                    },
+                    () =>
+                    {
+                        return true;
+                    });
+                }
+
+                return mDefaultFoldersCommand;
             }
         }
 

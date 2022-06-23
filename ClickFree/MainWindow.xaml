@@ -27,6 +27,12 @@
         </DataTemplate>
 
 
+        <DataTemplate DataType="{x:Type vm:DefaultFoldersVM}" >
+            <views:DefaultFoldersView />
+        </DataTemplate>
+
+
+
         <DataTemplate DataType="{x:Type vm:EraseDeviceVM}" >
             <views:EraseDeviceView />
         </DataTemplate>

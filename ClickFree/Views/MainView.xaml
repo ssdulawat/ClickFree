@@ -111,7 +111,7 @@
                 <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                     <Button Content="Notifications" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Upgrade to Premium (TBD)" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
-                    <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
+                    <Button Content="Change Default Folders" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" Command="{Binding Path=DefaultFoldersCommand}"/>
                     <Button Content="How-to Videos" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right"   Command="{Binding Path=Navigation.HowtovideoCommand}"/>
                     <Button Content="Leave a Review" Style="{StaticResource SettingsViewRoundButtonStyle}" HorizontalAlignment="Right" IsEnabled="False"/>
                     <Button Content="Format ClickFree USB" Style="{StaticResource SettingsViewRoundButtonStyle}" IsHitTestVisible="True" HorizontalAlignment="Right" 

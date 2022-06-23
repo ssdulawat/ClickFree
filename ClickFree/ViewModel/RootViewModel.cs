@@ -270,6 +270,7 @@ namespace ClickFree.ViewModel
             mViews.Add(NavigateEnum.OnBoarding, new OnboardingVM(this));
             mViews.Add(NavigateEnum.Main, new MainVM(this));
             mViews.Add(NavigateEnum.TransferToPC, new TransferVM(this));
+            mViews.Add(NavigateEnum.DefaultFolders, new DefaultFoldersVM(this));
             mViews.Add(NavigateEnum.BackupToUSBMain, new BackupToUSBMainVM(this));
             mViews.Add(NavigateEnum.BackupToUSBSelect, new BackupToUSBSelectVM(this));
             mViews.Add(NavigateEnum.EraseDeviceSelect, new EraseDeviceVM(this));

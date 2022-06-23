@@ -34,6 +34,7 @@ namespace ClickFree.Views
             InitializeComponent();
             BrushConverter bc = new BrushConverter();
             firstBorder.Background = (Brush)bc.ConvertFrom("#54BAF4");
+            DriveManager.MenuName = "Main";
         }
 
         public void MainBtn(object sender, System.EventArgs e)
@@ -47,7 +48,7 @@ namespace ClickFree.Views
             {
                 MainPanel.Visibility = Visibility.Hidden;
             }
-            
+            DriveManager.MenuName = "Main";
             SettingsPanel.Visibility = Visibility.Hidden;
             AboutPanel.Visibility = Visibility.Hidden;
         }
@@ -63,6 +64,7 @@ namespace ClickFree.Views
             {
                 SettingsPanel.Visibility = Visibility.Hidden;
             }
+            DriveManager.MenuName = "Setting";
             MainPanel.Visibility = Visibility.Hidden;
             AboutPanel.Visibility = Visibility.Hidden;
 
@@ -80,6 +82,7 @@ namespace ClickFree.Views
             {
                 AboutPanel.Visibility = Visibility.Hidden;
             }
+            DriveManager.MenuName = "About";
             MainPanel.Visibility = Visibility.Hidden;
             SettingsPanel.Visibility = Visibility.Hidden;
 
@@ -116,14 +119,15 @@ namespace ClickFree.Views
             bool ifDrive = DriveManager.HasUsbDrives;
             if (ifDrive == true)
             {
-                if (DriveManager.GetAvailableDisks().FirstOrDefault() != null)
+                var DiskInfo = DriveManager.GetAvailableDisks().FirstOrDefault();
+                if (DiskInfo != null)
                 {
-                    double bytesFs = DriveManager.GetAvailableDisks().FirstOrDefault().FreeSpace;
+                    double bytesFs = DiskInfo.FreeSpace;
                     double kilobyteFs = bytesFs / 1024;
                     double megabyteFs = kilobyteFs / 1024;
                     double gigabyteFs = megabyteFs / 1024;
 
-                    double bytesS = DriveManager.GetAvailableDisks().FirstOrDefault().Size;
+                    double bytesS = DiskInfo.Size;
                     double kilobyteS = bytesS / 1024;
                     double megabyteS = kilobyteS / 1024;
                     double gigabyteS = megabyteS / 1024;
@@ -132,25 +136,32 @@ namespace ClickFree.Views
                     connection.Content = "Connected";
                     space.Content = (float)Math.Round(gigabyteFs, 1) + " GB available out of " + (float)Math.Round(gigabyteS, 1) + " GB";
 
-                    if (mainButton.IsFocused)
+                   
+                    switch (DriveManager.MenuName)
                     {
-                        MainPanel.Visibility = Visibility.Visible;
-                        SettingsPanel.Visibility = Visibility.Hidden;
-                        AboutPanel.Visibility = Visibility.Hidden;
+                        case "Main":
+                            {
+                                MainBtn(null, null);
+                            }
+                            break;
+
+                        case "Setting":
+                            {
+                                SettingsBtn(null, null);
+                            }
+                            break;
+                        case "About":
+                            {
+                                AboutBtnClick(null, null);
+                            }
+                            break;
+                        default :
+                            {
+                                MainBtn(null, null);
+                            }
+                            break;
                     }
-                    else if (settingsButton.IsFocused)
-                    {
-                        MainPanel.Visibility = Visibility.Hidden;
-                        SettingsPanel.Visibility = Visibility.Visible;
-                        AboutPanel.Visibility = Visibility.Hidden;
-                    }
-                    else if (aboutButton.IsFocused)
-                    {
-                        MainPanel.Visibility = Visibility.Hidden;
-                        SettingsPanel.Visibility = Visibility.Hidden;
-                        AboutPanel.Visibility = Visibility.Visible;
-                    }
-                    
+
                 }
 
             }

@@ -41,6 +41,7 @@ namespace ClickFree.Windows
         public BackupToClickFreeWindow(List<string> from, string toDir)
         {
             InitializeComponent();
+            
             this.DataContext = mTransferDialogVM = new BackupDialogVM(from, toDir);
             mTransferDialogVM.Finished += MTransferDialogVM_Finished;
         }

@@ -256,6 +256,7 @@ namespace ClickFree.Helpers
 
             return result;
         }
+        public static string MenuName { get; set; }
 
         public static UsbDisk GetDiskByName(string name)
         {

@@ -34,8 +34,8 @@ namespace ClickFree.ViewModel
                     {
                         if (FacebookManager.CheckNetworkConnection() && DriveManager.CheckAccess())
                         {
-                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName, Environment.MachineName, Constants.FacebookFolderName);
-
+                          //  string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.WindowsBackupFolderName, Environment.MachineName, Constants.FacebookFolderName);
+                            string toFolder = Path.Combine(DriveManager.SelectedUSBDrive.Name, Constants.FacebookFolderName);
                             var ownerWindow = Application.Current.Windows[Application.Current.Windows.Count - 1];
                             BackupFromFacebookWindow window = new BackupFromFacebookWindow(mSelectedImages?.ToList(), toFolder)
                             {
