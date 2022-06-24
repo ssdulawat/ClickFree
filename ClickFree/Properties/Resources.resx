@@ -124,7 +124,7 @@
     <value>Backup your photos and videos</value>
   </data>
   <data name="BackupPhotosAndVideosMessage" xml:space="preserve">
-    <value>{0} files were successfully backuped. Now you can view them.</value>
+    <value>{0} files were successfully backup. Now you can view them.</value>
   </data>
   <data name="BackupPhotosAndVideosTitle" xml:space="preserve">
     <value>Backup your photos and videos</value>

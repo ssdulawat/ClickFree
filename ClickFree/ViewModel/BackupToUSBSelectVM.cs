@@ -12,13 +12,14 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using ClickFree.Windows;
 
+
 namespace ClickFree.ViewModel
 {
     public class BackupToUSBSelectVM : NavigationVM
     {
         #region Nested types
 
-        public abstract class IOInfoBase
+        public  class IOInfoBase
         {
             #region Properties
 
@@ -27,6 +28,7 @@ namespace ClickFree.ViewModel
 
             #endregion
         }
+
 
         public class DiskInfo : IOInfoBase
         {
@@ -323,7 +325,30 @@ namespace ClickFree.ViewModel
         public BackupToUSBSelectVM(INavigation navigation)
             : base(navigation)
         {
+            //here we will add default folders in selected directory list
+            AddDefaultDirectory();
             Navigate(null);
+        }
+
+        private void AddDefaultDirectory()
+        {
+            string selectedpath = string.Empty;
+            //for pictures
+            selectedpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Pictures";
+            if (Directory.Exists(selectedpath))
+                SelectedDirList.Add(new DirectoryInfo { Name = "Pictures", Path = selectedpath });
+            //for videos
+            selectedpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Videos";
+            if (Directory.Exists(selectedpath))
+                SelectedDirList.Add(new DirectoryInfo { Name = "Videos", Path = selectedpath });
+            //for Contacts
+            selectedpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Contacts";
+            if (Directory.Exists(selectedpath))
+                SelectedDirList.Add(new DirectoryInfo { Name = "Contacts", Path = selectedpath });
+            //for Contacts
+            selectedpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Icloud Photos";
+            if (Directory.Exists(selectedpath))
+                SelectedDirList.Add(new DirectoryInfo { Name = "Icloud Photos", Path = selectedpath });
         }
 
         #endregion
@@ -387,6 +412,8 @@ namespace ClickFree.ViewModel
                             });
                         }
                     }
+
+                   
                 }
                 catch (Exception)
                 {

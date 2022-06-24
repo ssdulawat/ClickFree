@@ -79,7 +79,7 @@ namespace ClickFree.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} files were successfully backuped. Now you can view them..
+        ///   Looks up a localized string similar to {0} files were successfully backup. Now you can view them..
         /// </summary>
         internal static string BackupPhotosAndVideosMessage {
             get {

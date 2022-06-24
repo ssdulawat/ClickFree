@@ -230,7 +230,7 @@ namespace ClickFree.ViewModel
                 case TransferManager.FailedReason.None:
                 default:
                     MessageBoxWindow.ShowMessageBox("Backup your photos and videos to USB",
-                                                    $"{obj.CurrentPosition} files were successfully backuped to your USB. Now you can view them in Click Free folder.",
+                                                    $"{obj.CurrentPosition} files were successfully backup to your USB. Now you can view them in Click Free folder.",
                                                     MessageBoxWindow.MessageBoxType.Success,
                                                     () =>
                                                     {
@@ -249,7 +249,7 @@ namespace ClickFree.ViewModel
             CurrentSize = obj.CurrentSize;
             TotalSize = obj.TotalSize;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backup. Please wait.";
         }
 
         private void MTransferManager_Start(TransferManager.TransferStartInfo obj)
@@ -257,7 +257,7 @@ namespace ClickFree.ViewModel
             CurrentSize = obj.CurrentSize;
             TotalSize = obj.TotalSize;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backup. Please wait.";
         }
 
         #endregion

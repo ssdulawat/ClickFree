@@ -208,7 +208,7 @@ namespace ClickFree.ViewModel
                 case TransferManager.FailedReason.None:
                 default:
                     MessageBoxWindow.ShowMessageBox("Backup your photos and videos",
-                                                    $"{obj.CurrentPosition} files were successfully backuped. Now you can view them.",
+                                                    $"{obj.CurrentPosition} files were successfully backup. Now you can view them.",
                                                     MessageBoxWindow.MessageBoxType.Success,
                                                     () =>
                                                     {
@@ -228,7 +228,7 @@ namespace ClickFree.ViewModel
             TotalSize = obj.TotalSize;
             CurrentPosition = obj.CurrentPosition;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backup. Please wait.";
         }
 
         private void MTransferManager_Start(TransferManager.TransferStartInfo obj)
@@ -238,7 +238,7 @@ namespace ClickFree.ViewModel
             TotalFiles = obj.TotalFiles;
             CurrentPosition = obj.CurrentPosition;
 
-            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backuped. Please wait.";
+            Status = $"{obj.CurrentPosition} files out of {obj.TotalFiles} were backup. Please wait.";
         }
 
         #endregion
